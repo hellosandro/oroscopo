@@ -58,6 +58,7 @@ function riempiSegno(dati) {
 
   adattaAlloSchermo();
   addEventListener("resize", adattaAlloSchermo);
+  mostraIllustrazione(segno.slug);
 
   const testo = document.getElementById("testo");
   for (const paragrafo of segno.paragrafi) {
@@ -67,6 +68,13 @@ function riempiSegno(dati) {
   }
 
   document.fonts.ready.then(impostaLunghezzaPagina);
+}
+
+// Al computer, accanto allo scontrino, l'illustrazione del segno (se c'è).
+function mostraIllustrazione(slug) {
+  const illustrazione = document.getElementById("illustrazione");
+  illustrazione.onload = () => (illustrazione.hidden = false);
+  illustrazione.src = `illustrazioni/${slug}.svg`;
 }
 
 // La carta è in rotolo: la pagina di stampa è lunga quanto lo scontrino.

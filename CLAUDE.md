@@ -28,6 +28,7 @@ Minisito statico che mostra l'oroscopo settimanale di Rob Brezsny (Free Will Ast
 ├── data/
 │   └── settimana.json  → testi della settimana (l'unico file da aggiornare ogni settimana)
 ├── glifi/              → un SVG per segno (pesci.svg, vergine.svg, …)
+├── illustrazioni/      → un'illustrazione a colori per segno, ritagliata da originale.svg
 ├── vercel.json         → URL puliti: /pesci → segno.html?s=pesci
 └── CLAUDE.md
 ```
@@ -64,6 +65,8 @@ Ordine dei segni: Ariete, Toro, Gemelli, Cancro, Leone, Vergine, Bilancia, Scorp
 - Firma: su una riga, Manuale 700, 6.5pt, maiuscolo, tracking 0.06em. "ROB BREZSNY" a sinistra, data della settimana a destra.
 - Nessun altro elemento: niente nome del sito, niente date del segno, niente box evidenziati.
 - A schermo (computer): scontrino ingrandito in proporzione a 280 pixel di larghezza, centrato su pagina bianca (nessun fondo colorato, nessun bordo), senza pulsanti (si stampa con il comando del browser o con Snap&tag). In stampa solo lo scontrino, fondo bianco, nessun margine.
+- Il nome del segno è un link all'elenco dei segni (la home): nessun segno visivo, sottolineato solo al passaggio del mouse.
+- Al computer (da 960px), a destra dello scontrino, l'illustrazione a colori del segno (`illustrazioni/<slug>.svg`), larga 420 pixel, allineata in alto, a 64 pixel dallo scontrino. Non compare sul telefono né in stampa. Le illustrazioni vengono da `illustrazioni/originale.svg` (probabile file Freepik: se il sito diventa pubblico, verificare la licenza e citare l'autore).
 - Sul telefono (schermi fino a 600px): pagina bianca, scontrino ingrandito in proporzione a tutta larghezza. Serve per la "stampa da web" dell'app Snap&tag, che fotografa lo schermo.
 
 ## Simboli (riferimento, viewBox 0 0 100 100)
