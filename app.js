@@ -61,11 +61,11 @@ function impostaLunghezzaPagina() {
 }
 
 // A schermo la colonna (48mm) viene ingrandita in proporzione:
-// sul telefono fino a tutta la larghezza, al computer fino a 360 pixel.
+// sul telefono fino a tutta la larghezza, al computer fino a 280 pixel.
 // In stampa resta a 48mm.
 function adattaAlloSchermo() {
   const foglio = document.querySelector(".foglio");
   const telefono = matchMedia("screen and (max-width: 600px)").matches;
   const larghezza = (48 / 25.4) * 96; // 48mm in pixel
-  foglio.style.zoom = (telefono ? innerWidth : 360) / larghezza;
+  foglio.style.zoom = (telefono ? innerWidth : 280) / larghezza;
 }

@@ -63,7 +63,7 @@ Ordine dei segni: Ariete, Toro, Gemelli, Cancro, Leone, Vergine, Bilancia, Scorp
 - Testo: Manuale 400, 8pt, interlinea 1.32, sillabazione automatica (`lang="it"`, `hyphens: auto`), allineato a sinistra. Nessuno spazio tra i paragrafi: dal secondo in poi rientro di prima riga di 1em.
 - Firma: su una riga, Manuale 700, 6.5pt, maiuscolo, tracking 0.06em. "ROB BREZSNY" a sinistra, data della settimana a destra.
 - Nessun altro elemento: niente nome del sito, niente date del segno, niente box evidenziati.
-- A schermo (computer): scontrino ingrandito in proporzione a 360 pixel di larghezza, centrato su pagina bianca (nessun fondo colorato, nessun bordo), senza pulsanti (si stampa con il comando del browser o con Snap&tag). In stampa solo lo scontrino, fondo bianco, nessun margine.
+- A schermo (computer): scontrino ingrandito in proporzione a 280 pixel di larghezza, centrato su pagina bianca (nessun fondo colorato, nessun bordo), senza pulsanti (si stampa con il comando del browser o con Snap&tag). In stampa solo lo scontrino, fondo bianco, nessun margine.
 - Sul telefono (schermi fino a 600px): pagina bianca, scontrino ingrandito in proporzione a tutta larghezza. Serve per la "stampa da web" dell'app Snap&tag, che fotografa lo schermo.
 
 ## Simboli (riferimento, viewBox 0 0 100 100)
@@ -76,7 +76,7 @@ Disegna gli altri nove con lo stesso stile: tratto uniforme, geometria semplice,
 
 ## Home (`index.html`)
 
-Minimale, su pagina bianca, nella stessa colonna dello scontrino (48mm, margine interno 1,5mm; a schermo ingrandita come lo scontrino: 360 pixel al computer, tutta larghezza sul telefono). In alto la data della settimana nello stile della firma; sotto i 12 segni, ognuno come la testata del suo scontrino (nome Manuale 800 19.5pt + simbolo 9mm), separati da righe tratteggiate e linkati alla pagina del segno.
+Minimale, su pagina bianca, nella stessa colonna dello scontrino (48mm, margine interno 1,5mm; a schermo ingrandita come lo scontrino: 280 pixel al computer, tutta larghezza sul telefono). In alto la data della settimana nello stile della firma; sotto i 12 segni, ognuno come la testata del suo scontrino (nome Manuale 800 19.5pt + simbolo 9mm), separati da righe tratteggiate e linkati alla pagina del segno.
 
 ## Aggiornamento settimanale
 
