@@ -54,15 +54,16 @@ Ordine dei segni: Ariete, Toro, Gemelli, Cancro, Leone, Vergine, Bilancia, Scorp
 
 ## Design dello scontrino (non cambiarlo senza chiedermelo)
 
-- Carta 58mm, area stampabile 48mm, margine laterale interno 2,5mm.
-- `@page { size: 58mm 110mm; margin: 0; }`. Lo scontrino deve restare sotto i 10 cm circa: se un testo è lungo, avvisami invece di allungare la pagina.
+- Carta 58mm, area stampabile 48mm, margine laterale interno 1,5mm.
+- `@page { size: 58mm …; margin: 0; }`: la carta è in rotolo, quindi la lunghezza è variabile e `app.js` la imposta segno per segno in base al testo. Di solito 10–12 cm: se uno scontrino supera i 13 cm circa, avvisami.
 - Solo nero puro `#000` su bianco: niente grigi, niente sfumature (la stampa termica li rende male).
-- Testata: nome del segno a sinistra in Manuale 800, 26pt, interlinea 0.85, tracking −0.02em. Simbolo del segno a destra, SVG a tratto 9×9mm, `stroke-width` 8 su viewBox 100, estremità arrotondate. Se un nome lungo non ci sta, riduci il corpo solo per quel segno.
+- Testata: nome del segno a sinistra in Manuale 800, 19.5pt (lo stesso per tutti: è il corpo con cui ci sta Capricorno, il nome più lungo), interlinea 0.85, tracking −0.02em. Simbolo del segno a destra, SVG a tratto 9×9mm, `stroke-width` 8 su viewBox 100, estremità arrotondate.
 - Riga tratteggiata 1px sotto la testata e sopra la firma, margine verticale 2,2mm.
 - Testo: Manuale 400, 8pt, interlinea 1.32, sillabazione automatica (`lang="it"`, `hyphens: auto`), allineato a sinistra. Nessuno spazio tra i paragrafi: dal secondo in poi rientro di prima riga di 1em.
 - Firma: su una riga, Manuale 700, 6.5pt, maiuscolo, tracking 0.06em. "ROB BREZSNY" a sinistra, data della settimana a destra.
 - Nessun altro elemento: niente nome del sito, niente date del segno, niente box evidenziati.
 - A schermo: scontrino centrato su fondo `#e9e9e6`, con un pulsante discreto "Stampa" (`window.print()`) nascosto in stampa. In stampa solo lo scontrino, fondo bianco, nessun margine.
+- Sul telefono (schermi fino a 600px): pagina bianca, scontrino ingrandito in proporzione a tutta larghezza, niente pulsante. Serve per la "stampa da web" dell'app Snap&tag, che fotografa lo schermo.
 
 ## Simboli (riferimento, viewBox 0 0 100 100)
 
@@ -84,7 +85,7 @@ Quando ti incollo il testo della pagina "All Signs (printer-friendly)" in ingles
 2. Traducili in italiano naturale e scorrevole, fedele al tono ironico e affettuoso dell'originale. Non riassumere e non aggiungere nulla.
 3. Dividi ogni testo in 2–3 paragrafi dove il senso lo suggerisce.
 4. Riscrivi `data/settimana.json`.
-5. Controlla che nessuno scontrino superi la lunghezza massima e segnalami quelli a rischio.
+5. Misura la lunghezza di ogni scontrino e segnalami quelli oltre i 13 cm circa.
 6. Fammi vedere un'anteprima, poi, solo con il mio ok, fai commit con messaggio `Settimana del <data>` e push su `main`. Vercel pubblica da solo in un paio di minuti.
 
 ## Diritti e visibilità

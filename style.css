@@ -1,5 +1,6 @@
 /* Oroscopo da scontrino — solo nero #000 su bianco */
 
+/* La lunghezza della pagina viene impostata da app.js, segno per segno */
 @page {
   size: 58mm 110mm;
   margin: 0;
@@ -31,11 +32,11 @@ body {
   padding: 48px 16px;
 }
 
-/* Carta 58mm → 48mm stampabili, con 2,5mm di margine interno per lato */
+/* Carta 58mm → 48mm stampabili, con 1,5mm di margine interno per lato */
 .scontrino {
   width: 48mm;
   margin: 0 auto;
-  padding: 3mm 2.5mm 4mm;
+  padding: 3mm 1.5mm 4mm;
   background: #fff;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
@@ -52,19 +53,12 @@ body {
 
 .nome {
   margin: 0;
-  font-size: 26pt;
+  font-size: 19.5pt; /* il corpo con cui ci sta Capricorno, il nome più lungo */
   font-weight: 800;
   line-height: 0.85;
   letter-spacing: -0.02em;
   white-space: nowrap;
 }
-
-/* Nomi lunghi: corpo ridotto solo per quel segno */
-[data-segno="bilancia"] .nome   { font-size: 25.5pt; }
-[data-segno="acquario"] .nome   { font-size: 23pt; }
-[data-segno="sagittario"] .nome { font-size: 21.5pt; }
-[data-segno="scorpione"] .nome  { font-size: 20.5pt; }
-[data-segno="capricorno"] .nome { font-size: 18.5pt; }
 
 .glifo {
   flex: none;

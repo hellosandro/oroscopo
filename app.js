@@ -42,6 +42,19 @@ function riempiSegno(dati) {
     p.textContent = paragrafo;
     testo.append(p);
   }
+
+  document.fonts.ready.then(impostaLunghezzaPagina);
+}
+
+// La carta è in rotolo: la pagina di stampa è lunga quanto lo scontrino.
+function impostaLunghezzaPagina() {
+  const scontrino = document.getElementById("scontrino");
+  const zoom = parseFloat(scontrino.style.zoom) || 1;
+  const altezza = scontrino.getBoundingClientRect().height / zoom;
+  const millimetri = Math.ceil((altezza * 25.4) / 96) + 1;
+  const stile = document.createElement("style");
+  stile.textContent = `@page { size: 58mm ${millimetri}mm; margin: 0; }`;
+  document.head.append(stile);
 }
 
 // Sul telefono lo scontrino (48mm) viene ingrandito in proporzione
