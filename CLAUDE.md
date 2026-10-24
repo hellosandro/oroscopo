@@ -46,11 +46,18 @@ Minisito statico che mostra l'oroscopo settimanale di Rob Brezsny (Free Will Ast
       "paragrafi": [
         "Primo paragrafo…",
         "Secondo paragrafo…"
-      ]
+      ],
+      "originale": {
+        "nome": "Pisces",
+        "paragrafi": ["First paragraph…", "Second paragraph…"]
+      }
     }
-  ]
+  ],
+  "originale": { "settimana": "22—28 Oct 2026" }
 }
 ```
+
+`originale` contiene il testo inglese di Brezsny, diviso negli stessi paragrafi della traduzione, con apostrofi e virgolette tipografici (’ “ ”).
 
 Ordine dei segni: Ariete, Toro, Gemelli, Cancro, Leone, Vergine, Bilancia, Scorpione, Sagittario, Capricorno, Acquario, Pesci.
 
@@ -65,6 +72,7 @@ Ordine dei segni: Ariete, Toro, Gemelli, Cancro, Leone, Vergine, Bilancia, Scorp
 - Firma: su una riga, Manuale 700, 6.5pt, maiuscolo, tracking 0.06em. "ROB BREZSNY" a sinistra, data della settimana a destra.
 - Nessun altro elemento: niente nome del sito, niente date del segno, niente box evidenziati.
 - A schermo (computer): scontrino ingrandito in proporzione a 280 pixel di larghezza, centrato su pagina bianca (nessun fondo colorato, nessun bordo), senza pulsanti (si stampa con il comando del browser o con Snap&tag). In stampa solo lo scontrino, fondo bianco, nessun margine.
+- Sotto lo scontrino, solo a schermo, un footer "english | italiano" (Manuale 13px, la lingua attiva in 700) per passare dall'originale alla traduzione. La scelta resta per gli altri segni. In inglese cambiano nome del segno, testo (con `lang="en"` per la sillabazione) e data della firma.
 - Il nome del segno è un link all'elenco dei segni (la home): nessun segno visivo, sottolineato solo al passaggio del mouse.
 - Al computer (da 960px), a destra dello scontrino, l'illustrazione a colori del segno (`illustrazioni/<slug>.svg`), larga 420 pixel, allineata in alto, a 64 pixel dallo scontrino. Non compare sul telefono né in stampa. Le illustrazioni vengono da `illustrazioni/originale.svg` (probabile file Freepik: se il sito diventa pubblico, verificare la licenza e citare l'autore).
 - Sul telefono (schermi fino a 600px): pagina bianca, scontrino ingrandito in proporzione a tutta larghezza. Serve per la "stampa da web" dell'app Snap&tag, che fotografa lo schermo.
@@ -93,7 +101,7 @@ Quando ti incollo il testo della pagina "All Signs (printer-friendly)" in ingles
 1. Estrai i 12 oroscopi e la data della settimana.
 2. Traducili in italiano naturale e scorrevole, fedele al tono ironico e affettuoso dell'originale. Non riassumere e non aggiungere nulla.
 3. Dividi ogni testo in 2–3 paragrafi dove il senso lo suggerisce.
-4. Riscrivi `data/settimana.json`.
+4. Riscrivi `data/settimana.json`, salvando anche l'originale inglese diviso negli stessi paragrafi.
 5. Misura la lunghezza di ogni scontrino e segnalami quelli oltre i 13 cm circa.
 6. Fammi vedere un'anteprima, poi, solo con il mio ok, fai commit con messaggio `Settimana del <data>` e push su `main`. Vercel pubblica da solo in un paio di minuti.
 

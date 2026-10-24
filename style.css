@@ -122,11 +122,20 @@ body {
     min-height: 0;
     padding: 0;
   }
+
+  .lingue {
+    margin: 8px 0 24px;
+    padding: 0 calc(100vw * 1.5 / 48);
+  }
 }
 
 @media print {
   .foglio {
     zoom: 1 !important;
+  }
+
+  .lingue {
+    display: none;
   }
 
   body,
@@ -136,6 +145,30 @@ body {
     padding: 0;
     background: #fff;
   }
+}
+
+/* Footer: english | italiano. Solo a schermo. */
+.lingue {
+  margin-top: 24px;
+  padding: 0 8.75px; /* allineato al testo: 1,5mm di margine × lo zoom a 280 pixel */
+  font-size: 13px;
+  line-height: 1;
+  text-align: left;
+}
+
+.lingue a {
+  color: #000;
+  text-decoration: none;
+}
+
+.lingue a.attiva {
+  font-weight: 700;
+}
+
+.lingue a:not(.attiva):hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.12em;
 }
 
 /* Illustrazione del segno: solo a schermo, al computer */

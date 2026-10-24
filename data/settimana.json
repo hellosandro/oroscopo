@@ -8,7 +8,14 @@
       "paragrafi": [
         "Nel Settecento l’orologiaio John Harrison, nato sotto l’Ariete, risolse uno dei grandi problemi scientifici del suo tempo: come determinare la longitudine in mare. Molti dotti astronomi non riuscirono a venirne a capo, ma Harrison, in gran parte autodidatta, insistette per decenni nel perfezionare il suo metodo. La sua scoperta trasformò la navigazione e rese più sicuri i viaggi per mare.",
         "Nomino Harrison tuo modello d’ispirazione per le prossime settimane, Ariete. La perseveranza, unita all’ingegno e alla fiducia nelle tue intuizioni, conterà per il tuo successo più della padronanza del modo in cui le cose si sono sempre fatte."
-      ]
+      ],
+      "originale": {
+        "nome": "Aries",
+        "paragrafi": [
+          "The 18th-century Aries watchmaker John Harrison solved one of the great scientific problems of his time: how to determine longitude at sea. Many learned astronomers failed to crack the puzzle, yet Harrison, largely self-taught, persisted for decades to refine the method. His breakthrough transformed navigation and enhanced the safety of sea journeys.",
+          "I nominate Harrison to be your inspirational role model in the coming weeks, Aries. Persistence combined with ingenuity and a trust in your hunches will be more important to your success than your mastery of the way things have always been done."
+        ]
+      }
     },
     {
       "slug": "toro",
@@ -16,7 +23,14 @@
       "paragrafi": [
         "Una serra può convincere i fiori a sbocciare prima dei loro tempi naturali. Ti consiglio di applicare un metodo simile alle paure che stanno mettendo radici in te. Invece di lasciare che si diffondano a poco a poco, nutrendoti di un flusso costante di angoscia a bassa intensità, spingile subito verso il loro culmine. Lascia che ogni preoccupazione diventi enorme e compiuta il più in fretta possibile. Invita le ansie ad arrivare tutte insieme.",
         "Poi affrontale in uno scontro decisivo, esaurisci il loro dramma e fai spazio ad avventure che ti daranno un piacere profondo e dolce. Fissa una data per il tuo preoccupasmo, il gran finale del tuo tormentarti, entro e non oltre 48 ore da adesso."
-      ]
+      ],
+      "originale": {
+        "nome": "Taurus",
+        "paragrafi": [
+          "A greenhouse can coax flowers to open ahead of their natural timetable. I recommend applying a similar approach to the fears taking root in you. Rather than letting them spread gradually and feed you a stream of low-grade dread, push them toward an immediate peak. Let every concern become enormous and fully formed as quickly as possible. Invite the anxieties to arrive all at once.",
+          "Then meet them in a decisive confrontation, exhaust their drama, and clear space for adventures that will give you deep, sweet pleasure. Set a date for your worrygasm, the grand finale of your fretting, for no later than 48 hours from now."
+        ]
+      }
     },
     {
       "slug": "gemelli",
@@ -25,7 +39,15 @@
         "Il fisico Richard Feynman, nato sotto i Gemelli, era famoso non solo per la sua genialità ma anche per il rifiuto di fingere di capire ciò che non capiva. In stanze piene di esperti faceva abitualmente domande di una semplicità infantile. «Ma perché succede?» era una delle sue preferite. Quelle domande ingenue spesso scardinavano problemi che gli specialisti non vedevano più.",
         "Diffidava del gergo e dava grande valore alla capacità di spiegare un’idea complessa con parole semplici. Se non sai spiegarla in modo semplice, suggeriva, non l’hai capita davvero.",
         "Ti invito ad adottare questa strategia nelle prossime settimane, Gemelli. I tuoi superpoteri saranno fare le domande ovvie che tutti gli altri sono troppo orgogliosi o intorpiditi per porre, e pretendere risposte che puoi capire davvero."
-      ]
+      ],
+      "originale": {
+        "nome": "Gemini",
+        "paragrafi": [
+          "Gemini-born physicist Richard Feynman was famous not only for his brilliance but for his refusal to pretend he understood things he didn’t. He routinely asked childishly simple questions in rooms full of experts. “But why does that happen?” was one of his favorites. Those naïve inquiries often cracked open problems the specialists had stopped seeing.",
+          "He distrusted jargon and prized the ability to explain a complex idea in plain words. If you can’t explicate it simply, he suggested, you don’t really understand it.",
+          "I invite you to adopt this as your strategy in the coming weeks, Gemini. Your superpowers will be to pose obvious questions everyone else is too proud or numb to ask, and to insist on answers you can actually understand."
+        ]
+      }
     },
     {
       "slug": "cancro",
@@ -33,7 +55,14 @@
       "paragrafi": [
         "La danzatrice e coreografa Anna Halprin, nata sotto il Cancro, visse fino a cent’anni e danzò fino alla fine. Insegnava che il movimento può guarire: il nostro corpo, se gli diamo il permesso di muoversi in modo libero ed espressivo, sa come lasciar andare il dolore, richiamare la gioia e ritrovare l’interezza. Una volta attraversò danzando la sua diagnosi di cancro, come fosse una medicina, e visse ancora per decenni.",
         "La sua lezione per te: il tuo corpo ha una sua intelligenza, e puoi affinare la tua capacità di accedervi. Nelle prossime settimane lascia che sia lui a guidarti. Balla, allungati, cammina, ondeggia. Fidati di ciò che la tua carne sa e la tua mente non ha ancora capito."
-      ]
+      ],
+      "originale": {
+        "nome": "Cancer",
+        "paragrafi": [
+          "Cancerian dancer and choreographer Anna Halprin lived to 100 and danced to the end. She taught the idea that movement could heal. Our bodies, given permission to move freely and expressively, know how to release grief, summon joy, and restore wholeness. She once danced through her own cancer diagnosis as a form of medicine and lived for decades longer.",
+          "Her lesson for you: Your body has its own intelligence, and you can enhance your ability to access it. In the coming weeks, let it lead. Dance, stretch, walk, sway. Trust what your flesh knows that your mind hasn’t figured out yet."
+        ]
+      }
     },
     {
       "slug": "leone",
@@ -41,7 +70,14 @@
       "paragrafi": [
         "In almeno un senso, Leone, nelle prossime settimane tornerai a casa. Forse scoprirai un rifugio che tira fuori il meglio di te: un luogo di potere dove ti senti senza difese e autentico.",
         "Oppure potresti radunare intorno a te, o trovare per caso, la comunità che hai sempre immaginato, o collegarti a una rete di alleati e risorse che un tempo sembrava irraggiungibile. Potresti sognare di viaggiare nella terra dove i tuoi antenati hanno amato e lavorato per generazioni, o pensare a un pellegrinaggio in un luogo leggendario che custodisce la chiave di un mistero che desideri ardentemente risolvere."
-      ]
+      ],
+      "originale": {
+        "nome": "Leo",
+        "paragrafi": [
+          "In at least one way, Leo, you’ll be coming home during the coming weeks. Perhaps you will discover a sanctuary that brings out your best: a power spot where you feel unguarded and authentic.",
+          "Or you may gather (or stumble into) the community you’ve always imagined, or link up with a web of allies and resources that once felt out of reach. You might dream of journeying to the land where your ancestors loved and labored for generations, or consider a pilgrimage to a storied place that holds the key to a mystery you’re hungry to resolve."
+        ]
+      }
     },
     {
       "slug": "vergine",
@@ -49,7 +85,14 @@
       "paragrafi": [
         "L’astronomo e astrologo rinascimentale Tycho Brahe passò decenni a raccogliere misurazioni precise del moto dei pianeti. Non sviluppò mai una teoria definitiva per spiegare i dati, e coltivava idee sbagliate sul funzionamento del sistema solare. Ma le sue osservazioni permisero al suo assistente Johannes Keplero di scoprire le leggi delle orbite planetarie.",
         "Tu potresti avere un ruolo simile, Vergine. La tua attenzione scrupolosa ai dettagli può gettare le basi per intuizioni importanti, che arrivino da te o da qualcuno che lavora insieme a te."
-      ]
+      ],
+      "originale": {
+        "nome": "Virgo",
+        "paragrafi": [
+          "Renaissance astronomer and astrologer Tycho Brahe spent decades collecting precise measurements of planetary motion. He never developed a final theory to explain the data, and he harbored mistaken theories about how the solar system worked. But his observations enabled his assistant Johannes Kepler to discover the laws of planetary orbits.",
+          "You could play a similar role, Virgo. Your careful attention to details can lay the groundwork for important realizations, whether by you or someone working in collaboration with you."
+        ]
+      }
     },
     {
       "slug": "bilancia",
@@ -57,7 +100,14 @@
       "paragrafi": [
         "Ammiro la tua capacità di restare fuori dal conflitto e offrire commenti distaccati e incisivi. Rispetto la tua preferenza per tenerti lontano da fazioni meschine e scaramucce di parte. Ma nei prossimi giorni spero che tu scenda direttamente nel fango e porti il contributo appassionato di chi crede nella causa e tiene davvero al risultato.",
         "Metti da parte le grandi idee e solleva un po’ di sano scompiglio al servizio di una giustizia pratica. Le schivate brillanti non basteranno: servono verifiche oneste di ciò che funziona davvero. Sii una persona pragmatica che fa accadere cose piene d’anima grazie a un’attenzione tenera ai compiti concreti."
-      ]
+      ],
+      "originale": {
+        "nome": "Libra",
+        "paragrafi": [
+          "I admire your ability to stay outside the conflict and offer detached, incisive commentary. I respect your preference for avoiding small-minded camps and partisan skirmishes. But in the coming days, I hope you’ll step directly into the muck and bring the passionate contributions of a devotee who’s invested in the outcome.",
+          "Put the grand ideas aside and stir up good trouble in service of practical justice. Clever sidestepping won’t do; what’s needed are honest tests of what actually works. Be a pragmatist who makes soulful things happen through tender focus on the concrete tasks."
+        ]
+      }
     },
     {
       "slug": "scorpione",
@@ -65,7 +115,14 @@
       "paragrafi": [
         "Ci sono parti del passato che ti tengono in schiavitù? Forse alcune catene ti sono perfino care, come una vecchia convinzione comoda, un’abitudine protettiva o una storia su chi sei che un tempo ti ha aiutato ma che ora ti va stretta. Se sei come la maggior parte di noi (me compreso!), hai ricordi affettuosi che purtroppo pongono limiti al tuo futuro.",
         "Qualunque cosa siano, caro Scorpione, questo è un momento eccellente per liberarti dalla loro presa. Per cominciare, fai un piccolo ma potente gesto di liberazione. Mentre lo fai, di’ ad alta voce: «Le versioni superate di me non mi tengono più in catene». Versione alternativa, se hai voglia di più fuoco: «Le &^%$@# versioni superate di me non mi tengono più in *%#@&+ catene»."
-      ]
+      ],
+      "originale": {
+        "nome": "Scorpio",
+        "paragrafi": [
+          "Are there parts of the past you’re in bondage to? Maybe some shackles are even beloved to you, like a comfortable old belief, a protective habit, or a story about who you are that once helped you but now confines you. If you’re like most of us (me included!), you have fond memories that unfortunately impose limits on your future.",
+          "Whatever they may be, dear Scorpio, now is an excellent time to disengage from their hold on you. To begin, make one small but potent gesture of liberation. As you do, say this aloud: “I am no longer chained to outdated versions of myself.” Alternate version, if you’re feeling extra fiery: “I am no longer &^%$@# chained to any *%#@&+ outdated versions of myself.”"
+        ]
+      }
     },
     {
       "slug": "sagittario",
@@ -73,7 +130,14 @@
       "paragrafi": [
         "Il Supremo Ministero del Mito Astrologico ha accolto la mia richiesta di assegnarti temporaneamente un nuovo titolo. Per le prossime quattro settimane hai l’autorizzazione a definirti l’Avventuriero Contemplativo, il Vagabondo Meditativo o l’Esploratore Pensoso, o tutti e tre, se ti va.",
         "Conferendoti questi titoli, ti incoraggio a liberare energia eroica da usare nei tuoi regni interiori. Un buon modo per approfittare di questa benedizione sarà rilassarti in una poltrona comoda e negoziare tregue con i tuoi demoni. Un’altra attività consigliata: durante lunghe passeggiate, chiedi agli spiriti della natura e al canto degli uccelli di affinare la tua intuizione sul futuro."
-      ]
+      ],
+      "originale": {
+        "nome": "Sagittarius",
+        "paragrafi": [
+          "The Supreme Ministry of Astrological Myth has agreed to my request to temporarily give you a new designation. For the next four weeks, you are authorized to refer to yourself as the Contemplative Adventurer or the Meditative Rambler or the Pensive Pathfinder—or all three, if you like.",
+          "In bestowing these titles, I’m encouraging you to free up heroic energy for use in your inner realms. One good way to capitalize on this blessing will be to relax in a comfy chair and negotiate truces with your demons. Another recommended activity: Ask the spirits of nature and the songs of birds to heighten your intuition about your future as you take long walks."
+        ]
+      }
     },
     {
       "slug": "capricorno",
@@ -81,7 +145,14 @@
       "paragrafi": [
         "Prevedo che nel 2029 ti farai impiantare nanotecnologie contro l’invecchiamento del corpo, che ti garantiranno di vivere ben oltre i cent’anni. Nel 2032 comincerai a scaricare i tuoi sogni notturni su un supporto digitale, per studiarli a lungo e imparare meglio dai loro messaggi in codice. Nel 2037 tu e una persona cara potrete sfruttare una tecnologia che vi permetterà di fondervi telepaticamente. Nel 2043 andrai in vacanza sulla Luna, dove ballerai con esuberanza nella bassa gravità lunare.",
         "Ma nel 2027 il tuo compito sarà più semplice. Imparerai ad amarti meglio e a trattarti con una gentilezza più tenera che mai. Questo è un ottimo momento per cominciare!"
-      ]
+      ],
+      "originale": {
+        "nome": "Capricorn",
+        "paragrafi": [
+          "In 2029, I predict you’ll get nanotech implants to fight the aging of your body, ensuring that you’ll live well past 100. In 2032, you’ll begin downloading your nightly dreams into a digital medium, allowing you to study them at length and bolster your ability to learn from their coded messages. In 2037, you and a loved one will be able to take advantage of technology that allows you to merge telepathically. In 2043, you’ll take a vacation on the moon, where you’ll dance exuberantly in low lunar gravity.",
+          "But in 2027, your task will be simpler. You’ll learn to love yourself better and treat yourself with more tender kindness than ever before. Now’s a great time to get started!"
+        ]
+      }
     },
     {
       "slug": "acquario",
@@ -89,7 +160,14 @@
       "paragrafi": [
         "Molti chef celebri sostengono che l’acidità sia un elemento sottovalutato, capace di trasformare un buon piatto in un piatto memorabile. Una spruzzata di limone o un goccio d’aceto risvegliano sapori già presenti. Pensa a quale potrebbe essere l’equivalente nella tua vita, Acquario. Qual è l’ingrediente in apparenza semplice che potrebbe ravvivare tutto il resto? Più gioco o più camminate? Più musica, più sincerità o più sonno?",
         "I presagi astrologici sono chiari: non è il momento di rivoluzionare la tua intera esistenza. Individua piuttosto una o due aggiunte sottili che rendano più luminosi i doni che hai già."
-      ]
+      ],
+      "originale": {
+        "nome": "Aquarius",
+        "paragrafi": [
+          "Many celebrated chefs insist that acidity is an underestimated element that transforms good food into memorable food. A squeeze of lemon or a splash of vinegar awakens other flavors already present. Consider what the equivalent might be in your own life, Aquarius. What’s the seemingly simple ingredient that could enliven everything else? More playfulness or more walking? More music, more honesty, or more sleep?",
+          "The astrological omens are clear that now isn’t the time to overhaul your entire existence. Instead, identify one or two subtle additions that make your existing gifts brighter."
+        ]
+      }
     },
     {
       "slug": "pesci",
@@ -97,7 +175,17 @@
       "paragrafi": [
         "Niente è uguale a ciò che sembra, ma non è nemmeno il contrario di ciò che sembra. La vita non è giusta, eppure sbaglieremmo a dire che è ingiusta. Stai all’erta per le parole che NON vengono dette. Dai per scontato che ogni domanda nasconda una complicazione. Diffida di chi ti dice che i misteri del momento sono irrisolvibili, e non vedere l’ora di scoprire l’enigma più profondo nascosto dentro ogni enigma in superficie.",
         "Ma ora ecco la buona notizia. Le complessità esasperanti alla fine si riveleranno divertenti e utili, se ti impegnerai con diligenza a sbrogliarle. La chiave del successo: usa tenerezza mentre esplori pensieri scomodi e sentimenti frustranti."
-      ]
+      ],
+      "originale": {
+        "nome": "Pisces",
+        "paragrafi": [
+          "Nothing is the same as what it appears to be, but neither is it the opposite of what it seems to be. Life isn’t fair, yet we’d be wrong to say it’s unfair. You should be on the lookout for the words that are NOT being said. Assume that every question has a hidden complication. Be skeptical if anyone tells you the current mysteries are unsolvable and be eager to discover the deeper riddle buried inside each superficial riddle.",
+          "But now here’s the good news. The maddening complexities will ultimately prove to be fun and helpful if you’re diligent in untangling them. The key to success: Be tender as you explore uncomfortable thoughts and frustrating feelings."
+        ]
+      }
     }
-  ]
+  ],
+  "originale": {
+    "settimana": "22—28 Oct 2026"
+  }
 }

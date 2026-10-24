@@ -49,22 +49,52 @@ function riempiSegno(dati) {
     location.pathname.split("/").filter(Boolean).pop();
   const segno = dati.segni.find((s) => s.slug === slug) || dati.segni[0];
 
-  document.title = segno.nome;
   document.getElementById("scontrino").dataset.segno = segno.slug;
-  document.getElementById("nome").textContent = segno.nome;
   document.getElementById("glifo").src = `glifi/${segno.slug}.svg`;
   document.getElementById("autore").textContent = dati.autore;
-  document.getElementById("data").textContent = dati.settimana;
 
   adattaAlloSchermo();
   addEventListener("resize", adattaAlloSchermo);
   mostraIllustrazione(segno.slug);
 
+  // Footer: english | italiano. La scelta resta per gli altri segni.
+  for (const link of document.querySelectorAll("#lingue a")) {
+    link.addEventListener("click", (evento) => {
+      evento.preventDefault();
+      try {
+        localStorage.setItem("lingua", link.dataset.lingua);
+      } catch {}
+      scriviTesto(dati, segno, link.dataset.lingua);
+    });
+  }
+  let lingua = "it";
+  try {
+    lingua = localStorage.getItem("lingua") || "it";
+  } catch {}
+  scriviTesto(dati, segno, lingua);
+}
+
+// Riempie lo scontrino nella lingua scelta: "it" (traduzione) o "en" (originale).
+function scriviTesto(dati, segno, lingua) {
+  const inglese = lingua === "en" && segno.originale;
+  const testi = inglese ? segno.originale : segno;
+  const settimana = inglese ? dati.originale.settimana : dati.settimana;
+
+  document.getElementById("scontrino").lang = inglese ? "en" : "it";
+  document.title = testi.nome;
+  document.getElementById("nome").textContent = testi.nome;
+  document.getElementById("data").textContent = settimana;
+
   const testo = document.getElementById("testo");
-  for (const paragrafo of segno.paragrafi) {
+  testo.replaceChildren();
+  for (const paragrafo of testi.paragrafi) {
     const p = document.createElement("p");
     p.textContent = paragrafo;
     testo.append(p);
+  }
+
+  for (const link of document.querySelectorAll("#lingue a")) {
+    link.classList.toggle("attiva", link.dataset.lingua === (inglese ? "en" : "it"));
   }
 
   document.fonts.ready.then(impostaLunghezzaPagina);
@@ -83,9 +113,13 @@ function impostaLunghezzaPagina() {
   const zoom = parseFloat(scontrino.style.zoom) || 1;
   const altezza = scontrino.getBoundingClientRect().height / zoom;
   const millimetri = Math.ceil((altezza * 25.4) / 96) + 1;
-  const stile = document.createElement("style");
+  let stile = document.getElementById("pagina");
+  if (!stile) {
+    stile = document.createElement("style");
+    stile.id = "pagina";
+    document.head.append(stile);
+  }
   stile.textContent = `@page { size: 58mm ${millimetri}mm; margin: 0; }`;
-  document.head.append(stile);
 }
 
 // A schermo la colonna (48mm) viene ingrandita in proporzione:
