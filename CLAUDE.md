@@ -94,9 +94,11 @@ Quando ti incollo il testo della pagina "All Signs (printer-friendly)" in ingles
 5. Misura la lunghezza di ogni scontrino e segnalami quelli oltre i 13 cm circa.
 6. Fammi vedere un'anteprima, poi, solo con il mio ok, fai commit con messaggio `Settimana del <data>` e push su `main`. Vercel pubblica da solo in un paio di minuti.
 
-### In automatico
+### A richiesta
 
-Un'attività programmata ("Oroscopo della settimana") parte ogni mercoledì alle 8:47 ora italiana: apre una nuova sessione, scarica https://freewillastrology.com/horoscopes/printer-friendly e, se la settimana è nuova, fa i passi 1–5 qui sopra. Poi mi manda una notifica con l'anteprima e aspetta il mio ok prima di pubblicare. Il dominio `freewillastrology.com` è tra quelli consentiti nelle impostazioni di rete dell'ambiente cloud.
+Non consulto l'oroscopo ogni settimana, quindi l'aggiornamento si fa solo quando lo chiedo (per esempio "aggiorna l'oroscopo"). In quel caso non serve che incolli il testo: scarica tu https://freewillastrology.com/horoscopes/printer-friendly (il dominio è consentito nelle impostazioni di rete dell'ambiente cloud) e fai i passi 1–6 qui sopra. Se la settimana è la stessa già online, dimmelo e non toccare niente.
+
+L'attività programmata "Oroscopo della settimana" (ogni mercoledì alle 8:47) esiste ma è in pausa: riattivala solo se te lo chiedo.
 
 ## Diritti e visibilità
 
