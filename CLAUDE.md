@@ -15,7 +15,7 @@ Minisito statico che mostra l'oroscopo settimanale di Rob Brezsny (Free Will Ast
 
 - HTML + CSS + un po' di JavaScript vanilla. Nessun framework, nessun passaggio di build.
 - Codice su GitHub, pubblicato su Vercel (deploy automatico a ogni push sul branch `main`).
-- Font da Google Fonts: solo Manuale (pesi 400, 700, 800).
+- Font da Google Fonts: solo Manuale (pesi 300, 400, 700, 800; il 300 solo per la data nel titolo della home).
 
 ## Struttura
 
@@ -76,7 +76,12 @@ Disegna gli altri nove con lo stesso stile: tratto uniforme, geometria semplice,
 
 ## Home (`index.html`)
 
-Minimale, su pagina bianca, nella stessa colonna dello scontrino (48mm, margine interno 1,5mm; a schermo ingrandita come lo scontrino: 280 pixel al computer, tutta larghezza sul telefono). In alto la data della settimana nello stile della firma; sotto i 12 segni, ognuno come la testata del suo scontrino (nome Manuale 800 19.5pt + simbolo 9mm), separati da righe tratteggiate e linkati alla pagina del segno.
+Minimale, su pagina bianca, con le stesse colonne dello scontrino (45mm di testo, righe tratteggiate).
+
+- Titolo su quattro righe, allineato a sinistra, tutto a 19.5pt come i nomi dei segni: "Oroscopo di" / "Rob Brezsny" in Manuale 800, poi la data in Manuale 300 su due righe: "22—28" / "ott 2026".
+- Sotto, i 12 segni: ognuno come la testata del suo scontrino (nome Manuale 800 19.5pt + simbolo 9mm), separati da righe tratteggiate e linkati alla pagina del segno.
+- Computer (da 960px): tre colonne con 6mm di spazio tra l'una e l'altra. Nella prima il titolo, nella seconda Ariete–Vergine, nella terza Bilancia–Pesci. Ingrandita a schermo come lo scontrino.
+- Telefono: una colonna sola a tutta larghezza, con il titolo in alto.
 
 ## Aggiornamento settimanale
 

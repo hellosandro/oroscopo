@@ -8,7 +8,11 @@ fetch("data/settimana.json")
   });
 
 function riempiHome(dati) {
-  document.getElementById("settimana").textContent = dati.settimana;
+  document.getElementById("autore").textContent = dati.autore;
+  // "22—28 ott 2026" → "22—28" a capo "ott 2026"
+  const [giorni, ...mese] = dati.settimana.split(" ");
+  const settimana = document.getElementById("settimana");
+  settimana.append(giorni, document.createElement("br"), mese.join(" "));
   const elenco = document.getElementById("elenco");
   for (const segno of dati.segni) {
     const voce = document.createElement("li");

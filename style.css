@@ -131,14 +131,18 @@ body {
   padding: 48px 16px;
 }
 
-/* Data in alto, come la firma dello scontrino */
-.settimana {
+/* Titolo: stesso corpo dei segni, la data in light */
+.titolo {
   margin: 0;
-  padding-bottom: 2.2mm;
-  font-size: 6.5pt;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  padding: 2.2mm 0;
+  font-size: 19.5pt;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.titolo .data {
+  font-weight: 300;
 }
 
 .elenco {
@@ -178,4 +182,33 @@ body {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.12em;
+}
+
+/* Computer: tre colonne da scontrino. Nella prima il titolo,
+   nelle altre due i segni (Ariete–Vergine, Bilancia–Pesci). */
+@media screen and (min-width: 960px) {
+  .home .foglio {
+    display: grid;
+    grid-template-columns: 45mm 96mm; /* 45 | 6 | 45 + 6 + 45 */
+    column-gap: 6mm;
+    align-items: start;
+    width: 150mm; /* 3 colonne da 45mm + 2 spazi da 6mm + margini interni */
+  }
+
+  .titolo {
+    border-top: 1px dashed #000;
+  }
+
+  .elenco {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, auto);
+    grid-auto-flow: column;
+    column-gap: 6mm;
+    border-top: 0;
+  }
+
+  .elenco li:nth-child(6n + 1) {
+    border-top: 1px dashed #000;
+  }
 }
