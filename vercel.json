@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    {
+      "source": "/:s(ariete|toro|gemelli|cancro|leone|vergine|bilancia|scorpione|sagittario|capricorno|acquario|pesci)",
+      "destination": "/segno.html?s=:s"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    }
+  ]
+}

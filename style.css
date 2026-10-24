@@ -1,0 +1,183 @@
+/* Oroscopo da scontrino — solo nero #000 su bianco */
+
+@page {
+  size: 58mm 110mm;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: #e9e9e6;
+  color: #000;
+  font-family: "Manuale", Georgia, serif;
+  font-weight: 400;
+}
+
+/* ---------- Scontrino ---------- */
+
+.pagina-segno {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 48px 16px;
+}
+
+/* Carta 58mm → 48mm stampabili, con 2,5mm di margine interno per lato */
+.scontrino {
+  width: 48mm;
+  margin: 0 auto;
+  padding: 3mm 2.5mm 4mm;
+  background: #fff;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.testata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2mm;
+  padding-bottom: 2.2mm;
+  border-bottom: 1px dashed #000;
+}
+
+.nome {
+  margin: 0;
+  font-size: 26pt;
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+/* Nomi lunghi: corpo ridotto solo per quel segno */
+[data-segno="bilancia"] .nome   { font-size: 25.5pt; }
+[data-segno="acquario"] .nome   { font-size: 23pt; }
+[data-segno="sagittario"] .nome { font-size: 21.5pt; }
+[data-segno="scorpione"] .nome  { font-size: 20.5pt; }
+[data-segno="capricorno"] .nome { font-size: 18.5pt; }
+
+.glifo {
+  flex: none;
+  width: 9mm;
+  height: 9mm;
+}
+
+.testo {
+  margin: 2.2mm 0;
+  font-size: 8pt;
+  line-height: 1.32;
+  text-align: left;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.testo p {
+  margin: 0;
+}
+
+.testo p + p {
+  text-indent: 1em;
+}
+
+.firma {
+  display: flex;
+  justify-content: space-between;
+  gap: 2mm;
+  padding-top: 2.2mm;
+  border-top: 1px dashed #000;
+  font-size: 6.5pt;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.stampa {
+  margin-top: 24px;
+  padding: 6px 14px;
+  border: 1px solid #000;
+  border-radius: 0;
+  background: transparent;
+  color: #000;
+  font: 700 11px/1 "Manuale", Georgia, serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media print {
+  body,
+  .pagina-segno {
+    display: block;
+    min-height: 0;
+    padding: 0;
+    background: #fff;
+  }
+
+  .stampa {
+    display: none;
+  }
+}
+
+/* ---------- Home ---------- */
+
+.home main {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 64px 16px;
+}
+
+.settimana {
+  margin: 0 0 16px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.elenco {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px dashed #000;
+}
+
+.elenco li {
+  border-bottom: 1px dashed #000;
+}
+
+.elenco a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  color: #000;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.elenco img {
+  width: 20px;
+  height: 20px;
+}
+
+.elenco a:hover .nome-segno,
+.elenco a:focus-visible .nome-segno {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
