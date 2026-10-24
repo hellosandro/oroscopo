@@ -93,6 +93,7 @@ Minimale, su pagina bianca, con le stesse colonne dello scontrino (45mm di testo
 - Sotto, i 12 segni: ognuno come la testata del suo scontrino (nome Manuale 800 19.5pt + simbolo 9mm), separati da righe tratteggiate e linkati alla pagina del segno.
 - Computer (da 960px): tre colonne con 6mm di spazio tra l'una e l'altra. Nella prima il titolo, nella seconda Ariete–Vergine, nella terza Bilancia–Pesci. Ingrandita a schermo come lo scontrino.
 - Telefono: una colonna sola a tutta larghezza, con il titolo in alto.
+- In fondo, come nelle pagine dei segni, il footer "english | italiano" centrato contro il bordo in basso. In inglese il titolo diventa "Horoscopes by" / "Rob Brezsny" / data inglese, e i segni prendono il nome inglese. La scelta della lingua vale per tutto il sito.
 
 ## Aggiornamento settimanale
 

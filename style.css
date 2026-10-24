@@ -116,17 +116,9 @@ body {
 /* Telefono (e app come Snap&tag, che "fotografano" lo schermo):
    pagina bianca, scontrino ingrandito a tutta larghezza da app.js */
 @media screen and (max-width: 480px) {
-  .pagina-segno,
-  .home {
-    padding: 0;
-  }
-
-  .home {
-    display: block;
-  }
-
-  .pagina-segno {
-    padding-bottom: 24px;
+  body.pagina-segno,
+  body.home {
+    padding: 0 0 24px;
   }
 
   /* Telefono: l'illustrazione in fondo, sopra il footer delle lingue */
@@ -236,7 +228,10 @@ body {
 /* ---------- Home ---------- */
 
 .home {
-  padding: 48px 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 48px 16px 24px;
 }
 
 /* Titolo: stesso corpo dei segni, la data in light */

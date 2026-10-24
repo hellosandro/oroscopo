@@ -9,20 +9,65 @@ fetch("data/settimana.json")
 
 function riempiHome(dati) {
   document.getElementById("autore").textContent = dati.autore;
-  const [prima, seconda] = dividiData(dati.settimana);
-  const settimana = document.getElementById("settimana");
-  settimana.append(prima, document.createElement("br"), seconda);
   const elenco = document.getElementById("elenco");
   for (const segno of dati.segni) {
     const voce = document.createElement("li");
     voce.innerHTML =
-      `<a href="${segno.slug}"><span class="nome-segno">${segno.nome}</span>` +
+      `<a href="${segno.slug}"><span class="nome-segno"></span>` +
       `<img src="glifi/${segno.slug}.svg" alt=""></a>`;
     elenco.append(voce);
   }
 
   adattaAlloSchermo();
   addEventListener("resize", adattaAlloSchermo);
+  collegaLingue((lingua) => scriviHome(dati, lingua));
+}
+
+// Riempie titolo e nomi dei segni della home nella lingua scelta.
+function scriviHome(dati, lingua) {
+  const inglese = lingua === "en" && dati.originale;
+  document.documentElement.lang = inglese ? "en" : "it";
+  document.getElementById("intestazione").textContent = inglese
+    ? "Horoscopes by"
+    : "Oroscopo di";
+
+  const settimana = document.getElementById("settimana");
+  const [prima, seconda] = dividiData(
+    inglese ? dati.originale.settimana : dati.settimana
+  );
+  settimana.replaceChildren(prima, document.createElement("br"), seconda);
+
+  const nomi = document.querySelectorAll("#elenco .nome-segno");
+  dati.segni.forEach((segno, i) => {
+    nomi[i].textContent =
+      inglese && segno.originale ? segno.originale.nome : segno.nome;
+  });
+
+  segnaLinguaAttiva(inglese ? "en" : "it");
+}
+
+// Footer "english | italiano": ricorda la scelta e la applica a ogni pagina.
+function collegaLingue(scrivi) {
+  for (const link of document.querySelectorAll("#lingue a")) {
+    link.addEventListener("click", (evento) => {
+      evento.preventDefault();
+      try {
+        localStorage.setItem("lingua", link.dataset.lingua);
+      } catch {}
+      scrivi(link.dataset.lingua);
+    });
+  }
+  let lingua = "it";
+  try {
+    lingua = localStorage.getItem("lingua") || "it";
+  } catch {}
+  scrivi(lingua);
+}
+
+function segnaLinguaAttiva(lingua) {
+  for (const link of document.querySelectorAll("#lingue a")) {
+    link.classList.toggle("attiva", link.dataset.lingua === lingua);
+  }
 }
 
 // Divide la data della settimana in due righe:
@@ -57,21 +102,7 @@ function riempiSegno(dati) {
   addEventListener("resize", adattaAlloSchermo);
   mostraIllustrazione(segno.slug);
 
-  // Footer: english | italiano. La scelta resta per gli altri segni.
-  for (const link of document.querySelectorAll("#lingue a")) {
-    link.addEventListener("click", (evento) => {
-      evento.preventDefault();
-      try {
-        localStorage.setItem("lingua", link.dataset.lingua);
-      } catch {}
-      scriviTesto(dati, segno, link.dataset.lingua);
-    });
-  }
-  let lingua = "it";
-  try {
-    lingua = localStorage.getItem("lingua") || "it";
-  } catch {}
-  scriviTesto(dati, segno, lingua);
+  collegaLingue((lingua) => scriviTesto(dati, segno, lingua));
 }
 
 // Riempie lo scontrino nella lingua scelta: "it" (traduzione) o "en" (originale).
@@ -93,9 +124,7 @@ function scriviTesto(dati, segno, lingua) {
     testo.append(p);
   }
 
-  for (const link of document.querySelectorAll("#lingue a")) {
-    link.classList.toggle("attiva", link.dataset.lingua === (inglese ? "en" : "it"));
-  }
+  segnaLinguaAttiva(inglese ? "en" : "it");
 
   document.fonts.ready.then(impostaLunghezzaPagina);
 }
