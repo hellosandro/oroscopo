@@ -94,6 +94,10 @@ Quando ti incollo il testo della pagina "All Signs (printer-friendly)" in ingles
 5. Misura la lunghezza di ogni scontrino e segnalami quelli oltre i 13 cm circa.
 6. Fammi vedere un'anteprima, poi, solo con il mio ok, fai commit con messaggio `Settimana del <data>` e push su `main`. Vercel pubblica da solo in un paio di minuti.
 
+### In automatico
+
+Un'attività programmata ("Oroscopo della settimana") parte ogni mercoledì alle 8:47 ora italiana: apre una nuova sessione, scarica https://freewillastrology.com/horoscopes/printer-friendly e, se la settimana è nuova, fa i passi 1–5 qui sopra. Poi mi manda una notifica con l'anteprima e aspetta il mio ok prima di pubblicare. Il dominio `freewillastrology.com` è tra quelli consentiti nelle impostazioni di rete dell'ambiente cloud.
+
 ## Diritti e visibilità
 
 I testi sono di Rob Brezsny e protetti da copyright. Il sito è per uso personale: deve restare privato (Vercel Deployment Protection attiva, `<meta name="robots" content="noindex">` in ogni pagina) finché non ho un permesso esplicito dell'autore per pubblicarlo.
