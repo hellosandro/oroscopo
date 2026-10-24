@@ -9,10 +9,9 @@ fetch("data/settimana.json")
 
 function riempiHome(dati) {
   document.getElementById("autore").textContent = dati.autore;
-  // "22—28 ott 2026" → "22—28" a capo "ott 2026"
-  const [giorni, ...mese] = dati.settimana.split(" ");
+  const [prima, seconda] = dividiData(dati.settimana);
   const settimana = document.getElementById("settimana");
-  settimana.append(giorni, document.createElement("br"), mese.join(" "));
+  settimana.append(prima, document.createElement("br"), seconda);
   const elenco = document.getElementById("elenco");
   for (const segno of dati.segni) {
     const voce = document.createElement("li");
@@ -24,6 +23,23 @@ function riempiHome(dati) {
 
   adattaAlloSchermo();
   addEventListener("resize", adattaAlloSchermo);
+}
+
+// Divide la data della settimana in due righe:
+// "22—28 ott 2026"     → "22—28"        / "ott 2026"
+// "29 ott—4 nov 2026"  → "29 ott—4 nov" / "2026"
+// "29 dic 2026—4 gen 2027" → "29 dic 2026—" / "4 gen 2027"
+function dividiData(data) {
+  const parole = data.split(" ");
+  const anno = parole.pop();
+  const mese = parole.pop();
+  const inizio = parole.join(" ");
+  if (/\d{4}/.test(inizio)) {
+    const [primo, secondo] = data.split("—");
+    return [primo + "—", secondo];
+  }
+  if (/[a-z]/i.test(inizio)) return [inizio + " " + mese, anno];
+  return [inizio, mese + " " + anno];
 }
 
 function riempiSegno(dati) {
