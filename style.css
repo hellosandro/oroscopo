@@ -16,7 +16,7 @@ html {
 
 body {
   margin: 0;
-  background: #e9e9e6;
+  background: #fff;
   color: #000;
   font-family: "Manuale", Georgia, serif;
   font-weight: 400;
@@ -32,12 +32,15 @@ body {
   padding: 48px 16px;
 }
 
-/* Carta 58mm → 48mm stampabili, con 1,5mm di margine interno per lato */
-.scontrino {
+/* Carta 58mm → 48mm stampabili, con 1,5mm di margine interno per lato.
+   La home usa la stessa colonna (.foglio). */
+.foglio {
   width: 48mm;
   margin: 0 auto;
   padding: 3mm 1.5mm 4mm;
-  background: #fff;
+}
+
+.scontrino {
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
@@ -112,11 +115,11 @@ body {
 /* Telefono (e app come Snap&tag, che "fotografano" lo schermo):
    pagina bianca, scontrino ingrandito a tutta larghezza da app.js */
 @media screen and (max-width: 600px) {
-  .pagina-segno {
+  .pagina-segno,
+  .home {
     display: block;
     min-height: 0;
     padding: 0;
-    background: #fff;
   }
 
   .stampa {
@@ -144,16 +147,15 @@ body {
 
 /* ---------- Home ---------- */
 
-.home main {
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
-  padding: 64px 16px;
+.home {
+  padding: 48px 16px;
 }
 
+/* Data in alto, come la firma dello scontrino */
 .settimana {
-  margin: 0 0 16px;
-  font-size: 11px;
+  margin: 0;
+  padding-bottom: 2.2mm;
+  font-size: 6.5pt;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -170,27 +172,30 @@ body {
   border-bottom: 1px dashed #000;
 }
 
+/* Ogni voce è la testata del suo scontrino */
 .elenco a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  gap: 2mm;
+  padding: 2.2mm 0;
   color: #000;
   text-decoration: none;
-  font-size: 22px;
+  font-size: 19.5pt;
   font-weight: 800;
-  line-height: 1;
+  line-height: 0.85;
   letter-spacing: -0.02em;
 }
 
 .elenco img {
-  width: 20px;
-  height: 20px;
+  flex: none;
+  width: 9mm;
+  height: 9mm;
 }
 
 .elenco a:hover .nome-segno,
 .elenco a:focus-visible .nome-segno {
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  text-underline-offset: 0.12em;
 }

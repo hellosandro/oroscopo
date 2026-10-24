@@ -17,6 +17,9 @@ function riempiHome(dati) {
       `<img src="glifi/${segno.slug}.svg" alt=""></a>`;
     elenco.append(voce);
   }
+
+  adattaAlTelefono();
+  addEventListener("resize", adattaAlTelefono);
 }
 
 function riempiSegno(dati) {
@@ -57,11 +60,11 @@ function impostaLunghezzaPagina() {
   document.head.append(stile);
 }
 
-// Sul telefono lo scontrino (48mm) viene ingrandito in proporzione
+// Sul telefono la colonna (48mm) viene ingrandita in proporzione
 // fino a occupare tutta la larghezza dello schermo.
 function adattaAlTelefono() {
-  const scontrino = document.getElementById("scontrino");
+  const foglio = document.querySelector(".foglio");
   const telefono = matchMedia("screen and (max-width: 600px)").matches;
   const larghezza = (48 / 25.4) * 96; // 48mm in pixel
-  scontrino.style.zoom = telefono ? innerWidth / larghezza : "";
+  foglio.style.zoom = telefono ? innerWidth / larghezza : "";
 }
