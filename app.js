@@ -18,8 +18,8 @@ function riempiHome(dati) {
     elenco.append(voce);
   }
 
-  adattaAlTelefono();
-  addEventListener("resize", adattaAlTelefono);
+  adattaAlloSchermo();
+  addEventListener("resize", adattaAlloSchermo);
 }
 
 function riempiSegno(dati) {
@@ -36,8 +36,8 @@ function riempiSegno(dati) {
   document.getElementById("autore").textContent = dati.autore;
   document.getElementById("data").textContent = dati.settimana;
 
-  adattaAlTelefono();
-  addEventListener("resize", adattaAlTelefono);
+  adattaAlloSchermo();
+  addEventListener("resize", adattaAlloSchermo);
 
   const testo = document.getElementById("testo");
   for (const paragrafo of segno.paragrafi) {
@@ -60,11 +60,12 @@ function impostaLunghezzaPagina() {
   document.head.append(stile);
 }
 
-// Sul telefono la colonna (48mm) viene ingrandita in proporzione
-// fino a occupare tutta la larghezza dello schermo.
-function adattaAlTelefono() {
+// A schermo la colonna (48mm) viene ingrandita in proporzione:
+// sul telefono fino a tutta la larghezza, al computer fino a 360 pixel.
+// In stampa resta a 48mm.
+function adattaAlloSchermo() {
   const foglio = document.querySelector(".foglio");
   const telefono = matchMedia("screen and (max-width: 600px)").matches;
   const larghezza = (48 / 25.4) * 96; // 48mm in pixel
-  foglio.style.zoom = telefono ? innerWidth / larghezza : "";
+  foglio.style.zoom = (telefono ? innerWidth : 360) / larghezza;
 }

@@ -112,7 +112,7 @@ body {
 }
 
 @media print {
-  .scontrino {
+  .foglio {
     zoom: 1 !important;
   }
 
