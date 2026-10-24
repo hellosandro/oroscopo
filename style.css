@@ -115,7 +115,26 @@ body {
   cursor: pointer;
 }
 
+/* Telefono (e app come Snap&tag, che "fotografano" lo schermo):
+   pagina bianca, scontrino ingrandito a tutta larghezza da app.js */
+@media screen and (max-width: 600px) {
+  .pagina-segno {
+    display: block;
+    min-height: 0;
+    padding: 0;
+    background: #fff;
+  }
+
+  .stampa {
+    display: none;
+  }
+}
+
 @media print {
+  .scontrino {
+    zoom: 1 !important;
+  }
+
   body,
   .pagina-segno {
     display: block;

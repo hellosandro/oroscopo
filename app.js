@@ -33,10 +33,22 @@ function riempiSegno(dati) {
   document.getElementById("autore").textContent = dati.autore;
   document.getElementById("data").textContent = dati.settimana;
 
+  adattaAlTelefono();
+  addEventListener("resize", adattaAlTelefono);
+
   const testo = document.getElementById("testo");
   for (const paragrafo of segno.paragrafi) {
     const p = document.createElement("p");
     p.textContent = paragrafo;
     testo.append(p);
   }
+}
+
+// Sul telefono lo scontrino (48mm) viene ingrandito in proporzione
+// fino a occupare tutta la larghezza dello schermo.
+function adattaAlTelefono() {
+  const scontrino = document.getElementById("scontrino");
+  const telefono = matchMedia("screen and (max-width: 600px)").matches;
+  const larghezza = (48 / 25.4) * 96; // 48mm in pixel
+  scontrino.style.zoom = telefono ? innerWidth / larghezza : "";
 }
