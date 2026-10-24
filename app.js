@@ -127,7 +127,7 @@ function impostaLunghezzaPagina() {
 // In stampa resta a 48mm.
 function adattaAlloSchermo() {
   const foglio = document.querySelector(".foglio");
-  const telefono = matchMedia("screen and (max-width: 600px)").matches;
+  const telefono = matchMedia("screen and (max-width: 480px)").matches;
   const larghezza = (48 / 25.4) * 96; // 48mm in pixel
   foglio.style.zoom = (telefono ? innerWidth : 280) / larghezza;
 }
