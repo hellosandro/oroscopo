@@ -9,6 +9,7 @@ Minisito statico che mostra l'oroscopo settimanale di Rob Brezsny (Free Will Ast
 - Quando dai orari, usa sempre il fuso orario italiano (CET/CEST).
 - Prima di modifiche grosse alla grafica, mostrami cosa cambi e aspetta il mio ok.
 - Rispondimi in italiano.
+- Lavora direttamente sul branch `main`: niente rami di prova.
 
 ## Stack
 
