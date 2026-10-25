@@ -16,6 +16,7 @@
    diventano più lunghe, il corpo resta lo stesso. */
 :root {
   --s: 1;
+  --st: var(--s); /* scala di titoli e simboli: di solito la stessa */
 }
 
 /* A schermo, computer e telefono, la stessa scala: 48mm → 280 pixel.
@@ -24,6 +25,15 @@
 @media screen {
   :root {
     --s: 1.5434;
+    --st: var(--s);
+  }
+}
+
+/* Telefono: testo a 18px, titoli e nomi dei segni a 36px */
+@media screen and (max-width: 480px) {
+  :root {
+    --s: 1.6875; /* 8pt → 18px */
+    --st: 1.3846; /* 19,5pt → 36px */
   }
 }
 
@@ -73,7 +83,7 @@ body {
 
 .nome {
   margin: 0;
-  font-size: calc(19.5pt * var(--s)); /* il corpo con cui ci sta Capricorno, il nome più lungo */
+  font-size: calc(19.5pt * var(--st)); /* il corpo con cui ci sta Capricorno, il nome più lungo */
   font-weight: 800;
   line-height: 0.85;
   letter-spacing: -0.02em;
@@ -95,8 +105,8 @@ body {
 
 .glifo {
   flex: none;
-  width: calc(9mm * var(--s));
-  height: calc(9mm * var(--s));
+  width: calc(9mm * var(--st));
+  height: calc(9mm * var(--st));
 }
 
 .testo {
@@ -256,7 +266,7 @@ body {
 .titolo {
   margin: 0;
   padding: calc(2.2mm * var(--s)) 0;
-  font-size: calc(19.5pt * var(--s));
+  font-size: calc(19.5pt * var(--st));
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.02em;
@@ -286,7 +296,7 @@ body {
   padding: calc(2.2mm * var(--s)) 0;
   color: #000;
   text-decoration: none;
-  font-size: calc(19.5pt * var(--s));
+  font-size: calc(19.5pt * var(--st));
   font-weight: 800;
   line-height: 0.85;
   letter-spacing: -0.02em;
@@ -294,8 +304,8 @@ body {
 
 .elenco img {
   flex: none;
-  width: calc(9mm * var(--s));
-  height: calc(9mm * var(--s));
+  width: calc(9mm * var(--st));
+  height: calc(9mm * var(--st));
 }
 
 .elenco a:hover .nome-segno,

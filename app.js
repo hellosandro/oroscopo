@@ -139,7 +139,7 @@ function impostaLunghezzaPagina() {
   const copia = document.getElementById("scontrino").cloneNode(true);
   copia.removeAttribute("id");
   copia.style.cssText =
-    "--s: 1; width: 48mm; position: absolute; left: -10000px; top: 0; visibility: hidden;";
+    "--s: 1; --st: 1; width: 48mm; position: absolute; left: -10000px; top: 0; visibility: hidden;";
   document.body.append(copia);
   const altezza = copia.getBoundingClientRect().height;
   copia.remove();
