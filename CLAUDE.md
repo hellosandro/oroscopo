@@ -10,6 +10,7 @@ Minisito statico che mostra l'oroscopo settimanale di Rob Brezsny (Free Will Ast
 - Prima di modifiche grosse alla grafica, mostrami cosa cambi e aspetta il mio ok.
 - Rispondimi in italiano.
 - Lavora direttamente sul branch `main`: niente rami di prova.
+- Quando ti do una percentuale per una misura, ragiono come nei programmi di grafica: lo stato attuale è il 100%, quindi "75%" vuol dire ridurre a tre quarti (25% più piccolo), "120%" ingrandire di un quinto. Le misure in pixel si intendono come le vedo sull'iPhone 13 (390px di larghezza).
 
 ## Stack
 
