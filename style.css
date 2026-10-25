@@ -10,6 +10,23 @@
   box-sizing: border-box;
 }
 
+/* --s è la scala dello scontrino: tutte le misure sono quelle di stampa
+   (mm e pt) moltiplicate per --s. In stampa vale 1; a schermo le misure
+   crescono, ma senza zoom: sul telefono la colonna si allarga e le righe
+   diventano più lunghe, il corpo resta lo stesso. */
+:root {
+  --s: 1;
+}
+
+/* A schermo, computer e telefono, la stessa scala: 48mm → 280 pixel.
+   Sul telefono la colonna si allarga fino a tutta la larghezza
+   e le righe diventano più lunghe, il corpo resta questo. */
+@media screen {
+  :root {
+    --s: 1.5434;
+  }
+}
+
 html {
   -webkit-text-size-adjust: 100%;
 }
@@ -35,9 +52,9 @@ body {
 /* Carta 58mm → 48mm stampabili, con 1,5mm di margine interno per lato.
    La home usa la stessa colonna (.foglio). */
 .foglio {
-  width: 48mm;
+  width: calc(48mm * var(--s));
   margin: 0 auto;
-  padding: 3mm 1.5mm 4mm;
+  padding: calc(3mm * var(--s)) calc(1.5mm * var(--s)) calc(4mm * var(--s));
 }
 
 .scontrino {
@@ -49,14 +66,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2mm;
-  padding-bottom: 2.2mm;
+  gap: calc(2mm * var(--s));
+  padding-bottom: calc(2.2mm * var(--s));
   border-bottom: 1px dashed #000;
 }
 
 .nome {
   margin: 0;
-  font-size: 19.5pt; /* il corpo con cui ci sta Capricorno, il nome più lungo */
+  font-size: calc(19.5pt * var(--s)); /* il corpo con cui ci sta Capricorno, il nome più lungo */
   font-weight: 800;
   line-height: 0.85;
   letter-spacing: -0.02em;
@@ -78,13 +95,13 @@ body {
 
 .glifo {
   flex: none;
-  width: 9mm;
-  height: 9mm;
+  width: calc(9mm * var(--s));
+  height: calc(9mm * var(--s));
 }
 
 .testo {
-  margin: 2.2mm 0;
-  font-size: 8pt;
+  margin: calc(2.2mm * var(--s)) 0;
+  font-size: calc(8pt * var(--s));
   line-height: 1.32;
   text-align: left;
   -webkit-hyphens: auto;
@@ -102,10 +119,10 @@ body {
 .firma {
   display: flex;
   justify-content: space-between;
-  gap: 2mm;
-  padding-top: 2.2mm;
+  gap: calc(2mm * var(--s));
+  padding-top: calc(2.2mm * var(--s));
   border-top: 1px dashed #000;
-  font-size: 6.5pt;
+  font-size: calc(6.5pt * var(--s));
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -114,27 +131,28 @@ body {
 
 
 /* Telefono (e app come Snap&tag, che "fotografano" lo schermo):
-   pagina bianca, scontrino ingrandito a tutta larghezza da app.js */
+   pagina bianca, colonna a tutta larghezza. Il corpo non cambia:
+   sugli schermi più larghi le righe sono solo più lunghe. */
 @media screen and (max-width: 480px) {
   body.pagina-segno,
   body.home {
     padding: 0 0 24px;
   }
 
+  .foglio {
+    width: 100%;
+  }
+
   /* Telefono: l'illustrazione in fondo, sopra il footer delle lingue */
   .pagina-segno .illustrazione:not([hidden]) {
     display: block;
-    width: calc(100% - 2 * 100vw * 1.5 / 48);
+    width: calc(100% - 2 * 1.5mm * var(--s));
     height: auto;
     margin: 8px auto 24px;
   }
 }
 
 @media print {
-  .foglio {
-    zoom: 1 !important;
-  }
-
   .lingue {
     display: none;
   }
@@ -237,8 +255,8 @@ body {
 /* Titolo: stesso corpo dei segni, la data in light */
 .titolo {
   margin: 0;
-  padding: 2.2mm 0;
-  font-size: 19.5pt;
+  padding: calc(2.2mm * var(--s)) 0;
+  font-size: calc(19.5pt * var(--s));
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.02em;
@@ -264,11 +282,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2mm;
-  padding: 2.2mm 0;
+  gap: calc(2mm * var(--s));
+  padding: calc(2.2mm * var(--s)) 0;
   color: #000;
   text-decoration: none;
-  font-size: 19.5pt;
+  font-size: calc(19.5pt * var(--s));
   font-weight: 800;
   line-height: 0.85;
   letter-spacing: -0.02em;
@@ -276,8 +294,8 @@ body {
 
 .elenco img {
   flex: none;
-  width: 9mm;
-  height: 9mm;
+  width: calc(9mm * var(--s));
+  height: calc(9mm * var(--s));
 }
 
 .elenco a:hover .nome-segno,
@@ -292,10 +310,10 @@ body {
 @media screen and (min-width: 960px) {
   .home .foglio {
     display: grid;
-    grid-template-columns: 45mm 96mm; /* 45 | 6 | 45 + 6 + 45 */
-    column-gap: 6mm;
+    grid-template-columns: calc(45mm * var(--s)) calc(96mm * var(--s)); /* 45 | 6 | 45 + 6 + 45 */
+    column-gap: calc(6mm * var(--s));
     align-items: start;
-    width: 150mm; /* 3 colonne da 45mm + 2 spazi da 6mm + margini interni */
+    width: calc(150mm * var(--s)); /* 3 colonne da 45mm + 2 spazi da 6mm + margini interni */
   }
 
   .titolo {
@@ -307,7 +325,7 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(6, auto);
     grid-auto-flow: column;
-    column-gap: 6mm;
+    column-gap: calc(6mm * var(--s));
     border-top: 0;
   }
 

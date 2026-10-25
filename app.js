@@ -18,8 +18,6 @@ function riempiHome(dati) {
     elenco.append(voce);
   }
 
-  adattaAlloSchermo();
-  addEventListener("resize", adattaAlloSchermo);
   collegaLingue((lingua) => scriviHome(dati, lingua));
 }
 
@@ -98,8 +96,6 @@ function riempiSegno(dati) {
   document.getElementById("glifo").src = `glifi/${segno.slug}.svg`;
   document.getElementById("autore").textContent = dati.autore;
 
-  adattaAlloSchermo();
-  addEventListener("resize", adattaAlloSchermo);
   mostraIllustrazione(segno.slug);
 
   collegaLingue((lingua) => scriviTesto(dati, segno, lingua));
@@ -137,10 +133,16 @@ function mostraIllustrazione(slug) {
 }
 
 // La carta è in rotolo: la pagina di stampa è lunga quanto lo scontrino.
+// Lo misura su una copia invisibile con le misure di stampa (48mm, scala 1),
+// perché a schermo la colonna ha un'altra larghezza.
 function impostaLunghezzaPagina() {
-  const scontrino = document.getElementById("scontrino");
-  const zoom = parseFloat(scontrino.style.zoom) || 1;
-  const altezza = scontrino.getBoundingClientRect().height / zoom;
+  const copia = document.getElementById("scontrino").cloneNode(true);
+  copia.removeAttribute("id");
+  copia.style.cssText =
+    "--s: 1; width: 48mm; position: absolute; left: -10000px; top: 0; visibility: hidden;";
+  document.body.append(copia);
+  const altezza = copia.getBoundingClientRect().height;
+  copia.remove();
   const millimetri = Math.ceil((altezza * 25.4) / 96) + 1;
   let stile = document.getElementById("pagina");
   if (!stile) {
@@ -149,14 +151,4 @@ function impostaLunghezzaPagina() {
     document.head.append(stile);
   }
   stile.textContent = `@page { size: 58mm ${millimetri}mm; margin: 0; }`;
-}
-
-// A schermo la colonna (48mm) viene ingrandita in proporzione:
-// sul telefono fino a tutta la larghezza, al computer fino a 280 pixel.
-// In stampa resta a 48mm.
-function adattaAlloSchermo() {
-  const foglio = document.querySelector(".foglio");
-  const telefono = matchMedia("screen and (max-width: 480px)").matches;
-  const larghezza = (48 / 25.4) * 96; // 48mm in pixel
-  foglio.style.zoom = (telefono ? innerWidth : 280) / larghezza;
 }
