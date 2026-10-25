@@ -265,7 +265,7 @@ body {
 /* Titolo: stesso corpo dei segni, la data in light */
 .titolo {
   margin: 0;
-  padding: calc(2.2mm * var(--s)) 0;
+  padding: calc(2.2mm * var(--s) * 0.75) 0; /* come le righe dei segni */
   font-size: calc(19.5pt * var(--st));
   font-weight: 800;
   line-height: 0.95;
@@ -293,7 +293,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: calc(2mm * var(--s));
-  padding: calc(2.2mm * var(--s)) 0;
+  padding: calc(2.2mm * var(--s) * 0.75) 0; /* righe: 75% della testata dello scontrino */
   color: #000;
   text-decoration: none;
   font-size: calc(19.5pt * var(--st));
@@ -304,8 +304,8 @@ body {
 
 .elenco img {
   flex: none;
-  width: calc(9mm * var(--st));
-  height: calc(9mm * var(--st));
+  width: calc(9mm * var(--st) * 0.75); /* simboli: 75% di quelli dello scontrino */
+  height: calc(9mm * var(--st) * 0.75);
 }
 
 .elenco a:hover .nome-segno,

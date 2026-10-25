@@ -90,7 +90,7 @@ Disegna gli altri nove con lo stesso stile: tratto uniforme, geometria semplice,
 Minimale, su pagina bianca, con le stesse colonne dello scontrino (45mm di testo, righe tratteggiate).
 
 - Titolo su quattro righe, allineato a sinistra, tutto a 19.5pt come i nomi dei segni: "Oroscopo di" / "Rob Brezsny" in Manuale 800, poi la data in Manuale 300 su due righe, divisa in automatico da `app.js`: "22—28" / "ott 2026"; a cavallo di due mesi "29 ott—4 nov" / "2026"; a cavallo di due anni "29 dic 2026—" / "4 gen 2027".
-- Sotto, i 12 segni: ognuno come la testata del suo scontrino (nome Manuale 800 19.5pt + simbolo 9mm), separati da righe tratteggiate e linkati alla pagina del segno.
+- Sotto, i 12 segni: ognuno come la testata del suo scontrino (nome Manuale 800 19.5pt), ma con simbolo e spazi sopra/sotto ridotti del 25% (righe più basse del 25%); separati da righe tratteggiate e linkati alla pagina del segno. Anche lo spazio sopra il titolo è ridotto allo stesso modo, così titolo e prima riga partono allineati.
 - Computer (da 960px): tre colonne con 6mm di spazio tra l'una e l'altra. Nella prima il titolo, nella seconda Ariete–Vergine, nella terza Bilancia–Pesci. Ingrandita a schermo come lo scontrino.
 - Telefono: una colonna sola a tutta larghezza, con il titolo in alto.
 - In fondo, come nelle pagine dei segni, il footer "english | italiano" centrato contro il bordo in basso. In inglese il titolo diventa "Horoscopes by" / "Rob Brezsny" / data inglese, e i segni prendono il nome inglese. La scelta della lingua vale per tutto il sito.
