@@ -100,7 +100,7 @@ Minimale, su pagina bianca, con le stesse colonne dello scontrino (45mm di testo
 
 - Link "note" / "notes" nel footer di tutte le pagine, a destra di "english | italiano", staccato di 1,5em.
 - Stessa colonna dello scontrino: titolo "Note" / "Notes" come la testata (link alla home), sotto il testo. Segue la lingua scelta.
-- Contenuto: sito personale senza scopo di lucro; oroscopi di Rob Brezsny con link a freewillastrology.com e © Rob Brezsny; traduzioni amatoriali e non ufficiali, non riviste né approvate dall'autore; illustrazioni di pikisuperstar (senza citare la licenza); simboli, impaginazione e sito di Sandro Stefanelli; richieste di rimozione all'indirizzo iCloud "Nascondi la mia email" 53_razza.bufalo@icloud.com (non usare altri indirizzi).
+- Contenuto: sito personale senza scopo di lucro; oroscopi di Rob Brezsny con link a freewillastrology.com e © Rob Brezsny; traduzioni amatoriali e non ufficiali, non riviste né approvate dall'autore; illustrazioni di pikisuperstar (senza citare la licenza); simboli, impaginazione e sito di Sandro Stefanelli; richieste di rimozione con un link "scrivimi" / "write to me" (l'indirizzo non compare nel testo) all'indirizzo iCloud "Nascondi la mia email" 53_razza.bufalo@icloud.com (non usare altri indirizzi).
 
 ## Aggiornamento settimanale
 
