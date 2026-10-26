@@ -7,6 +7,19 @@ fetch("data/settimana.json")
     if (document.getElementById("scontrino")) riempiSegno(dati);
   });
 
+// Pagina delle note: non legge i dati, mostra il testo nella lingua scelta.
+if (document.getElementById("nota")) {
+  collegaLingue((lingua) => {
+    for (const testo of document.querySelectorAll("#nota .testo")) {
+      testo.hidden = testo.dataset.lingua !== lingua;
+    }
+    document.getElementById("titolo-nota").textContent =
+      lingua === "en" ? "Notes" : "Note";
+    document.documentElement.lang = lingua;
+    segnaLinguaAttiva(lingua);
+  });
+}
+
 function riempiHome(dati) {
   document.getElementById("autore").textContent = dati.autore;
   const elenco = document.getElementById("elenco");
@@ -46,7 +59,7 @@ function scriviHome(dati, lingua) {
 
 // Footer "english | italiano": ricorda la scelta e la applica a ogni pagina.
 function collegaLingue(scrivi) {
-  for (const link of document.querySelectorAll("#lingue a")) {
+  for (const link of document.querySelectorAll("#lingue a[data-lingua]")) {
     link.addEventListener("click", (evento) => {
       evento.preventDefault();
       try {
@@ -63,9 +76,11 @@ function collegaLingue(scrivi) {
 }
 
 function segnaLinguaAttiva(lingua) {
-  for (const link of document.querySelectorAll("#lingue a")) {
+  for (const link of document.querySelectorAll("#lingue a[data-lingua]")) {
     link.classList.toggle("attiva", link.dataset.lingua === lingua);
   }
+  document.getElementById("link-nota").textContent =
+    lingua === "en" ? "notes" : "note";
 }
 
 // Divide la data della settimana in due righe:

@@ -206,6 +206,29 @@ body {
   font-weight: 700;
 }
 
+/* "note" sta a destra delle lingue, staccato da uno spazio */
+.lingue .link-nota {
+  margin-left: 1.5em;
+}
+
+/* Pagina delle note: lo scontrino da solo, i link nel testo sottolineati */
+.pagina-nota .testo a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.12em;
+}
+
+@media screen and (min-width: 960px) {
+  .pagina-segno.pagina-nota {
+    display: flex;
+  }
+
+  .pagina-segno.pagina-nota .foglio {
+    margin: 0 auto;
+  }
+}
+
 .lingue a:not(.attiva):hover {
   text-decoration: underline;
   text-decoration-thickness: 1px;

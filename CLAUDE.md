@@ -23,6 +23,7 @@ Minisito statico che mostra l'oroscopo settimanale di Rob Brezsny (Free Will Ast
 /
 ├── index.html          → home: elenco dei 12 segni
 ├── segno.html          → pagina del singolo segno (lo "scontrino")
+├── nota.html           → note e disclaimer, in italiano e inglese (URL pulito /nota)
 ├── style.css           → stili condivisi
 ├── app.js              → legge i dati e riempie le pagine
 ├── data/
@@ -94,6 +95,12 @@ Minimale, su pagina bianca, con le stesse colonne dello scontrino (45mm di testo
 - Computer (da 960px): tre colonne con 6mm di spazio tra l'una e l'altra. Nella prima il titolo, nella seconda Ariete–Vergine, nella terza Bilancia–Pesci. Ingrandita a schermo come lo scontrino.
 - Telefono: una colonna sola a tutta larghezza, con il titolo in alto. Righe più basse che al computer (spazi sopra/sotto 9,5px, simboli 32px, riga di 52px), perché titolo e 12 segni stiano in una schermata di iPhone 13 (l'ultimo segno finisce a circa 796px).
 - In fondo, come nelle pagine dei segni, il footer "english | italiano" centrato contro il bordo in basso. In inglese il titolo diventa "Horoscopes by" / "Rob Brezsny" / data inglese, e i segni prendono il nome inglese. La scelta della lingua vale per tutto il sito.
+
+## Note (`nota.html`)
+
+- Link "note" / "notes" nel footer di tutte le pagine, a destra di "english | italiano", staccato di 1,5em.
+- Stessa colonna dello scontrino: titolo "Note" / "Notes" come la testata (link alla home), sotto il testo. Segue la lingua scelta.
+- Contenuto: sito personale senza scopo di lucro; oroscopi di Rob Brezsny con link a freewillastrology.com e © Rob Brezsny; traduzioni amatoriali e non ufficiali, non riviste né approvate dall'autore; illustrazioni di pikisuperstar (senza citare la licenza); simboli, impaginazione e sito di Sandro Stefanelli; richieste di rimozione all'indirizzo iCloud "Nascondi la mia email" 53_razza.bufalo@icloud.com (non usare altri indirizzi).
 
 ## Aggiornamento settimanale
 

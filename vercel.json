@@ -3,7 +3,8 @@
     {
       "source": "/:s(ariete|toro|gemelli|cancro|leone|vergine|bilancia|scorpione|sagittario|capricorno|acquario|pesci)",
       "destination": "/segno.html?s=:s"
-    }
+    },
+    { "source": "/nota", "destination": "/nota.html" }
   ],
   "headers": [
     {
