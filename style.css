@@ -33,7 +33,7 @@
 @media screen and (max-width: 480px) {
   :root {
     --s: 1.6875; /* 8pt → 18px */
-    --st: 1.3846; /* 19,5pt → 36px */
+    --st: 1.3462; /* 19,5pt → 35px */
   }
 }
 
@@ -147,6 +147,18 @@ body {
   body.pagina-segno,
   body.home {
     padding: 0 0 24px;
+  }
+
+  /* Home sul telefono: righe un po' più basse, perché tutti e 12 i segni
+     stiano in una schermata di iPhone 13 */
+  body.home .titolo,
+  body.home .elenco a {
+    padding: 9.5px 0;
+  }
+
+  body.home .elenco img {
+    width: 32px;
+    height: 32px;
   }
 
   .foglio {
