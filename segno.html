@@ -9,6 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manuale:wght@300;400;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Tema scelto dal footer (dark | light): applicato subito, prima che la pagina appaia
+    try {
+      const tema = localStorage.getItem("tema");
+      if (tema) document.documentElement.dataset.tema = tema;
+    } catch {}
+  </script>
 </head>
 <body class="pagina-segno">
   <article class="foglio scontrino" id="scontrino">
@@ -25,6 +32,7 @@
   <img class="illustrazione" id="illustrazione" alt="" hidden>
   <footer class="lingue" id="lingue">
     <a href="#en" data-lingua="en" lang="en">english</a> | <a href="#it" data-lingua="it">italiano</a>
+    <span class="tema"><a href="#dark" data-tema="dark" lang="en">dark</a> | <a href="#light" data-tema="light" lang="en">light</a></span>
     <a class="link-nota" id="link-nota" href="nota">note</a>
   </footer>
   <script src="app.js"></script>

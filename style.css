@@ -15,6 +15,8 @@
    crescono, ma senza zoom: sul telefono la colonna si allarga e le righe
    diventano più lunghe, il corpo resta lo stesso. */
 :root {
+  --carta: #fff; /* fondo */
+  --inchiostro: #000; /* testo, righe, simboli */
   --s: 1;
   --st: var(--s); /* scala di titoli e simboli: di solito la stessa */
 }
@@ -37,14 +39,44 @@
   }
 }
 
+/* Modo scuro: di base segue l'impostazione del dispositivo; il footer
+   "dark | light" lo forza (attributo data-tema su <html>, salvato nel browser).
+   Solo a schermo: in stampa resta sempre nero su bianco. */
+@media screen and (prefers-color-scheme: dark) {
+  :root:not([data-tema="light"]) {
+    --carta: #000;
+    --inchiostro: #fff;
+    color-scheme: dark;
+  }
+
+  /* I simboli sono file SVG neri: in modo scuro li invertiamo in bianco */
+  :root:not([data-tema="light"]) .glifo,
+  :root:not([data-tema="light"]) .elenco img {
+    filter: invert(1);
+  }
+}
+
+@media screen {
+  :root[data-tema="dark"] {
+    --carta: #000;
+    --inchiostro: #fff;
+    color-scheme: dark;
+  }
+
+  :root[data-tema="dark"] .glifo,
+  :root[data-tema="dark"] .elenco img {
+    filter: invert(1);
+  }
+}
+
 html {
   -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
-  background: #fff;
-  color: #000;
+  background: var(--carta);
+  color: var(--inchiostro);
   font-family: "Manuale", Georgia, serif;
   font-weight: 400;
 }
@@ -78,7 +110,7 @@ body {
   align-items: center;
   gap: calc(2mm * var(--s));
   padding-bottom: calc(2.2mm * var(--s));
-  border-bottom: 1px dashed #000;
+  border-bottom: 1px dashed var(--inchiostro);
 }
 
 .nome {
@@ -131,7 +163,7 @@ body {
   justify-content: space-between;
   gap: calc(2mm * var(--s));
   padding-top: calc(2.2mm * var(--s));
-  border-top: 1px dashed #000;
+  border-top: 1px dashed var(--inchiostro);
   font-size: calc(6.5pt * var(--s));
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -200,7 +232,7 @@ body {
 }
 
 .lingue a {
-  color: #000;
+  color: var(--inchiostro);
   text-decoration: none;
 }
 
@@ -208,7 +240,8 @@ body {
   font-weight: 700;
 }
 
-/* "note" sta a destra delle lingue, staccato da uno spazio */
+/* Gruppi del footer (lingue, tema, note) staccati da uno spazio */
+.lingue .tema,
 .lingue .link-nota {
   margin-left: 1.5em;
 }
@@ -317,11 +350,11 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
-  border-top: 1px dashed #000;
+  border-top: 1px dashed var(--inchiostro);
 }
 
 .elenco li {
-  border-bottom: 1px dashed #000;
+  border-bottom: 1px dashed var(--inchiostro);
 }
 
 /* Ogni voce è la testata del suo scontrino */
@@ -331,7 +364,7 @@ body {
   align-items: center;
   gap: calc(2mm * var(--s));
   padding: calc(2.2mm * var(--s) * 0.75) 0; /* righe: 75% della testata dello scontrino */
-  color: #000;
+  color: var(--inchiostro);
   text-decoration: none;
   font-size: calc(19.5pt * var(--st));
   font-weight: 800;
@@ -364,7 +397,7 @@ body {
   }
 
   .titolo {
-    border-top: 1px dashed #000;
+    border-top: 1px dashed var(--inchiostro);
   }
 
   .elenco {
@@ -377,6 +410,6 @@ body {
   }
 
   .elenco li:nth-child(6n + 1) {
-    border-top: 1px dashed #000;
+    border-top: 1px dashed var(--inchiostro);
   }
 }

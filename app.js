@@ -7,6 +7,32 @@ fetch("data/settimana.json")
     if (document.getElementById("scontrino")) riempiSegno(dati);
   });
 
+// Footer "dark | light": forza il modo scuro o chiaro e lo ricorda.
+// Finché non si sceglie, il sito segue l'impostazione del dispositivo.
+const sistemaScuro = matchMedia("(prefers-color-scheme: dark)");
+
+function segnaTemaAttivo() {
+  const tema =
+    document.documentElement.dataset.tema ||
+    (sistemaScuro.matches ? "dark" : "light");
+  for (const link of document.querySelectorAll("#lingue a[data-tema]")) {
+    link.classList.toggle("attiva", link.dataset.tema === tema);
+  }
+}
+
+for (const link of document.querySelectorAll("#lingue a[data-tema]")) {
+  link.addEventListener("click", (evento) => {
+    evento.preventDefault();
+    document.documentElement.dataset.tema = link.dataset.tema;
+    try {
+      localStorage.setItem("tema", link.dataset.tema);
+    } catch {}
+    segnaTemaAttivo();
+  });
+}
+sistemaScuro.addEventListener("change", segnaTemaAttivo);
+segnaTemaAttivo();
+
 // Pagina delle note: non legge i dati, mostra il testo nella lingua scelta.
 if (document.getElementById("nota")) {
   collegaLingue((lingua) => {

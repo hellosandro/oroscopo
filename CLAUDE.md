@@ -67,6 +67,7 @@ Ordine dei segni: Ariete, Toro, Gemelli, Cancro, Leone, Vergine, Bilancia, Scorp
 - Carta 58mm, area stampabile 48mm, margine laterale interno 1,5mm.
 - `@page { size: 58mm …; margin: 0; }`: la carta è in rotolo, quindi la lunghezza è variabile e `app.js` la imposta segno per segno in base al testo. Di solito 10–12 cm: se uno scontrino supera i 13 cm circa, avvisami.
 - Solo nero puro `#000` su bianco: niente grigi, niente sfumature (la stampa termica li rende male).
+- Modo scuro: di base segue l'impostazione del dispositivo (`prefers-color-scheme: dark`); nel footer "dark | light" (dopo le lingue, prima di "note", stesso stile, quello attivo in 700) lo forza e la scelta resta salvata nel browser. Solo a schermo: bianco puro `#fff` su nero puro `#000`, simboli invertiti in bianco, illustrazioni a colori invariate. I colori sono le variabili `--carta` e `--inchiostro` in `style.css`. In stampa sempre nero su bianco. Con Snap&tag in modo scuro lo scontrino esce nero: non importa.
 - Testata: nome del segno a sinistra in Manuale 800, 19.5pt (lo stesso per tutti: è il corpo con cui ci sta Capricorno, il nome più lungo), interlinea 0.85, tracking −0.02em. Simbolo del segno a destra, SVG a tratto 9×9mm, `stroke-width` 8 su viewBox 100, estremità arrotondate.
 - Riga tratteggiata 1px sotto la testata e sopra la firma, margine verticale 2,2mm.
 - Testo: Manuale 400, 8pt, interlinea 1.32, sillabazione automatica (`lang="it"`, `hyphens: auto`), allineato a sinistra. Nessuno spazio tra i paragrafi: dal secondo in poi rientro di prima riga di 1em.
