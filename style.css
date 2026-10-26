@@ -163,12 +163,14 @@ body {
 
   .foglio {
     width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   /* Telefono: l'illustrazione in fondo, sopra il footer delle lingue */
   .pagina-segno .illustrazione:not([hidden]) {
     display: block;
-    width: calc(100% - 2 * 1.5mm * var(--s));
+    width: calc(100% - 32px); /* allineata al testo: 16px per lato */
     height: auto;
     margin: 8px auto 24px;
   }
