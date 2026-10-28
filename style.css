@@ -35,7 +35,7 @@
 @media screen and (max-width: 480px) {
   :root {
     --s: 1.6875; /* 8pt → 18px */
-    --st: 1.3077; /* 19,5pt → 34px */
+    --st: 1.2115; /* 19,5pt → 31,5px */
   }
 }
 
@@ -185,12 +185,12 @@ body {
      stiano in una schermata di iPhone 13 */
   body.home .titolo,
   body.home .elenco a {
-    padding: 9.5px 0;
+    padding: 8.5px 0;
   }
 
   body.home .elenco img {
-    width: 31px;
-    height: 31px;
+    width: 28.8px;
+    height: 28.8px;
   }
 
   .foglio {
