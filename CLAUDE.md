@@ -30,7 +30,7 @@ Minisito statico che mostra l'oroscopo settimanale di Rob Brezsny (Free Will Ast
 │   └── settimana.json  → testi della settimana (l'unico file da aggiornare ogni settimana)
 ├── glifi/              → un SVG per segno (pesci.svg, vergine.svg, …)
 ├── illustrazioni/      → un'illustrazione a colori per segno, ritagliata da originale.svg
-├── icone/              → icona della web app (apple-touch-icon 180px, 192/512px) e favicon: simbolo astrologico nero su bianco
+├── icone/              → icona della web app (apple-touch-icon 180px, 192/512px) e favicon: simbolo astrologico bianco su nero
 ├── vercel.json         → URL puliti: /pesci → segno.html?s=pesci
 └── CLAUDE.md
 ```
