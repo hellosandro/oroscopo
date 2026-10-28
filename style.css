@@ -35,7 +35,7 @@
 @media screen and (max-width: 480px) {
   :root {
     --s: 1.6875; /* 8pt → 18px */
-    --st: 1.3462; /* 19,5pt → 35px */
+    --st: 1.3077; /* 19,5pt → 34px */
   }
 }
 
@@ -189,8 +189,8 @@ body {
   }
 
   body.home .elenco img {
-    width: 32px;
-    height: 32px;
+    width: 31px;
+    height: 31px;
   }
 
   .foglio {
