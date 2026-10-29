@@ -70,7 +70,7 @@ Ordine dei segni: Ariete, Toro, Gemelli, Cancro, Leone, Vergine, Bilancia, Scorp
 - Solo nero puro `#000` su bianco: niente grigi, niente sfumature (la stampa termica li rende male).
 - Modo scuro: di base segue l'impostazione del dispositivo (`prefers-color-scheme: dark`); nel footer "dark | light" (dopo le lingue, prima di "note", stesso stile, quello attivo in 700) lo forza e la scelta resta salvata nel browser. Solo a schermo: bianco puro `#fff` su nero puro `#000`, simboli invertiti in bianco, illustrazioni a colori invariate. I colori sono le variabili `--carta` e `--inchiostro` in `style.css`. In stampa sempre nero su bianco. Con Snap&tag in modo scuro lo scontrino esce nero: non importa.
 - Testata: nome del segno a sinistra in Manuale 800, 19.5pt (lo stesso per tutti: è il corpo con cui ci sta Capricorno, il nome più lungo), interlinea 0.85, tracking −0.02em. Simbolo del segno a destra, SVG a tratto 9×9mm, `stroke-width` 8 su viewBox 100, estremità arrotondate.
-- Riga tratteggiata 1px sotto la testata e sopra la firma, margine verticale 2,2mm.
+- Riga tratteggiata 1px sotto la testata e sopra la firma, margine verticale 2,2mm. A schermo tutte le righe tratteggiate (anche in home) sono al 60% di opacità (variabile `--riga`); in stampa restano nero pieno.
 - Testo: Manuale 400, 8pt, interlinea 1.32, sillabazione automatica (`lang="it"`, `hyphens: auto`), allineato a sinistra. Nessuno spazio tra i paragrafi: dal secondo in poi rientro di prima riga di 1em.
 - Firma: su una riga, Manuale 700, 6.5pt, maiuscolo, tracking 0.06em. "ROB BREZSNY" a sinistra, data della settimana a destra.
 - Nessun altro elemento: niente nome del sito, niente date del segno, niente box evidenziati.

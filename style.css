@@ -17,6 +17,9 @@
 :root {
   --carta: #fff; /* fondo */
   --inchiostro: #000; /* testo, righe, simboli */
+  /* Righe tratteggiate: al 60% a schermo; in stampa nero pieno,
+     perché la stampa termica non rende le trasparenze */
+  --riga: var(--inchiostro);
   --s: 1;
   --st: var(--s); /* scala di titoli e simboli: di solito la stessa */
 }
@@ -24,6 +27,12 @@
 /* A schermo, computer e telefono, la stessa scala: 48mm → 280 pixel.
    Sul telefono la colonna si allarga fino a tutta la larghezza
    e le righe diventano più lunghe, il corpo resta questo. */
+@media screen {
+  :root {
+    --riga: color-mix(in srgb, var(--inchiostro) 60%, transparent);
+  }
+}
+
 @media screen {
   :root {
     --s: 1.5434;
@@ -110,7 +119,7 @@ body {
   align-items: center;
   gap: calc(2mm * var(--s));
   padding-bottom: calc(2.2mm * var(--s));
-  border-bottom: 1px dashed var(--inchiostro);
+  border-bottom: 1px dashed var(--riga);
 }
 
 .nome {
@@ -163,7 +172,7 @@ body {
   justify-content: space-between;
   gap: calc(2mm * var(--s));
   padding-top: calc(2.2mm * var(--s));
-  border-top: 1px dashed var(--inchiostro);
+  border-top: 1px dashed var(--riga);
   font-size: calc(6.5pt * var(--s));
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -350,11 +359,11 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
-  border-top: 1px dashed var(--inchiostro);
+  border-top: 1px dashed var(--riga);
 }
 
 .elenco li {
-  border-bottom: 1px dashed var(--inchiostro);
+  border-bottom: 1px dashed var(--riga);
 }
 
 /* Ogni voce è la testata del suo scontrino */
@@ -397,7 +406,7 @@ body {
   }
 
   .titolo {
-    border-top: 1px dashed var(--inchiostro);
+    border-top: 1px dashed var(--riga);
   }
 
   .elenco {
@@ -410,6 +419,6 @@ body {
   }
 
   .elenco li:nth-child(6n + 1) {
-    border-top: 1px dashed var(--inchiostro);
+    border-top: 1px dashed var(--riga);
   }
 }
