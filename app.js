@@ -43,14 +43,12 @@ if (apriMenu) {
   });
 }
 
-// Pagina delle note: non legge i dati, mostra il testo nella lingua scelta.
+// Pagina Info: non legge i dati, mostra il testo nella lingua scelta.
 if (document.getElementById("nota")) {
   collegaLingue((lingua) => {
     for (const testo of document.querySelectorAll("#nota .testo")) {
       testo.hidden = testo.dataset.lingua !== lingua;
     }
-    document.getElementById("titolo-nota").textContent =
-      lingua === "en" ? "Notes" : "Note";
     document.documentElement.lang = lingua;
     segnaLinguaAttiva(lingua);
   });
@@ -114,11 +112,6 @@ function collegaLingue(scrivi) {
 function segnaLinguaAttiva(lingua) {
   for (const link of document.querySelectorAll("a[data-lingua]")) {
     link.classList.toggle("attiva", link.dataset.lingua === lingua);
-  }
-  document.getElementById("link-nota").textContent =
-    lingua === "en" ? "notes" : "note";
-  for (const voce of document.querySelectorAll(".menu-nota")) {
-    voce.textContent = lingua === "en" ? "Notes" : "Note";
   }
 }
 

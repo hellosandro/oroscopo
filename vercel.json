@@ -4,12 +4,32 @@
       "source": "/:s(ariete|toro|gemelli|cancro|leone|vergine|bilancia|scorpione|sagittario|capricorno|acquario|pesci)",
       "destination": "/segno.html?s=:s"
     },
-    { "source": "/nota", "destination": "/nota.html" }
+    {
+      "source": "/info",
+      "destination": "/info.html"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/nota",
+      "destination": "/info",
+      "permanent": true
+    },
+    {
+      "source": "/nota.html",
+      "destination": "/info",
+      "permanent": true
     }
   ]
 }

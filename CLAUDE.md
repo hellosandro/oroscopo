@@ -23,7 +23,7 @@ Minisito statico che mostra l'oroscopo settimanale di Rob Brezsny (Free Will Ast
 /
 ├── index.html          → home: elenco dei 12 segni
 ├── segno.html          → pagina del singolo segno (lo "scontrino")
-├── nota.html           → note e disclaimer, in italiano e inglese (URL pulito /nota)
+├── info.html           → info e disclaimer, in italiano e inglese (URL pulito /info; il vecchio /nota rimanda qui)
 ├── style.css           → stili condivisi
 ├── app.js              → legge i dati e riempie le pagine
 ├── data/
@@ -68,7 +68,7 @@ Ordine dei segni: Ariete, Toro, Gemelli, Cancro, Leone, Vergine, Bilancia, Scorp
 - Carta 58mm, area stampabile 48mm, margine laterale interno 1,5mm.
 - `@page { size: 58mm …; margin: 0; }`: la carta è in rotolo, quindi la lunghezza è variabile e `app.js` la imposta segno per segno in base al testo. Di solito 10–12 cm: se uno scontrino supera i 13 cm circa, avvisami.
 - Solo nero puro `#000` su bianco: niente grigi, niente sfumature (la stampa termica li rende male).
-- Modo scuro: di base segue l'impostazione del dispositivo (`prefers-color-scheme: dark`); nel footer "dark | light" (dopo le lingue, prima di "note", stesso stile, quello attivo in 700) lo forza e la scelta resta salvata nel browser. Solo a schermo: bianco puro `#fff` su nero puro `#000`, simboli invertiti in bianco, illustrazioni a colori invariate. I colori sono le variabili `--carta` e `--inchiostro` in `style.css`. In stampa sempre nero su bianco. Con Snap&tag in modo scuro lo scontrino esce nero: non importa.
+- Modo scuro: di base segue l'impostazione del dispositivo (`prefers-color-scheme: dark`); nel footer "dark | light" (dopo le lingue, prima di "info", stesso stile, quello attivo in 700) lo forza e la scelta resta salvata nel browser. Solo a schermo: bianco puro `#fff` su nero puro `#000`, simboli invertiti in bianco, illustrazioni a colori invariate. I colori sono le variabili `--carta` e `--inchiostro` in `style.css`. In stampa sempre nero su bianco. Con Snap&tag in modo scuro lo scontrino esce nero: non importa.
 - Testata: nome del segno a sinistra in Manuale 800, 19.5pt (lo stesso per tutti: è il corpo con cui ci sta Capricorno, il nome più lungo), interlinea 0.85, tracking −0.02em. Simbolo del segno a destra, SVG a tratto 9×9mm, `stroke-width` 8 su viewBox 100, estremità arrotondate.
 - Riga tratteggiata 1px sotto la testata e sopra la firma, margine verticale 2,2mm. A schermo tutte le righe tratteggiate (anche in home) sono al 60% di opacità (variabile `--riga`); in stampa restano nero pieno.
 - Testo: Manuale 400, 8pt, interlinea 1.32, sillabazione automatica (`lang="it"`, `hyphens: auto`), allineato a sinistra. Nessuno spazio tra i paragrafi: dal secondo in poi rientro di prima riga di 1em.
@@ -96,13 +96,13 @@ Minimale, su pagina bianca, con le stesse colonne dello scontrino (45mm di testo
 - Sotto, i 12 segni: ognuno come la testata del suo scontrino (nome Manuale 800 19.5pt), ma con simbolo e spazi sopra/sotto ridotti del 25% (righe più basse del 25%); separati da righe tratteggiate e linkati alla pagina del segno. Anche lo spazio sopra il titolo è ridotto allo stesso modo, così titolo e prima riga partono allineati.
 - Computer (da 960px): tre colonne con 6mm di spazio tra l'una e l'altra. Nella prima il titolo, nella seconda Ariete–Vergine, nella terza Bilancia–Pesci. Ingrandita a schermo come lo scontrino.
 - Telefono: una colonna sola a tutta larghezza, con il titolo in alto. Righe più basse che al computer (spazi sopra/sotto 8,5px, simboli 28,8px, riga di circa 47px), perché titolo e 12 segni stiano in una schermata di iPhone 13 (l’ultimo segno finisce a circa 718px).
-- Telefono, menu: icona a due linee orizzontali (viewBox 100, tratto 8, estremità arrotondate, come i simboli) sulla prima riga del titolo, allineata ai simboli dei segni; toccandola diventa una croce e al posto dei segni compaiono, come righe dell'elenco: Italiano, English, Dark, Light (ognuno con un cerchietto; quello attivo ha un punto dentro) e Note/Notes con un "+". Sul telefono il footer della home è nascosto: il menu lo sostituisce. Nelle pagine dei segni e nelle note, anche sul telefono, niente menu: resta il footer in fondo (serve per cambiare lingua mentre si legge un segno).
+- Telefono, menu: icona a due linee orizzontali (viewBox 100, tratto 8, estremità arrotondate, come i simboli) sulla prima riga del titolo, allineata ai simboli dei segni; toccandola diventa una croce e al posto dei segni compaiono, come righe dell'elenco: Italiano, English, Dark, Light (ognuno con un cerchietto; quello attivo ha un punto dentro) e Info con una "i" disegnata come i segni (punto pieno; asta con attacco a sinistra in alto e piede che curva a destra: `M34 40 H46 V74 C46 86 56 90 70 86`, punto cx 46 cy 16 r 6). Sul telefono il footer della home è nascosto: il menu lo sostituisce. Nelle pagine dei segni e in Info, anche sul telefono, niente menu: resta il footer in fondo (serve per cambiare lingua mentre si legge un segno).
 - In fondo, come nelle pagine dei segni, il footer "english | italiano" centrato contro il bordo in basso. In inglese il titolo diventa "Horoscopes by" / "Rob Brezsny" / data inglese, e i segni prendono il nome inglese. La scelta della lingua vale per tutto il sito.
 
-## Note (`nota.html`)
+## Info (`info.html`)
 
-- Link "note" / "notes" nel footer di tutte le pagine, a destra di "english | italiano", staccato di 1,5em.
-- Stessa colonna dello scontrino: titolo "Note" / "Notes" come la testata (link alla home), sotto il testo. Segue la lingua scelta.
+- Link "info" (uguale nelle due lingue) nel footer di tutte le pagine, a destra di "dark | light", staccato di 1,5em.
+- Stessa colonna dello scontrino: titolo "Info" come la testata (link alla home), sotto il testo. Il testo segue la lingua scelta.
 - Contenuto: sito personale senza scopo di lucro; oroscopi di Rob Brezsny con link a freewillastrology.com e © Rob Brezsny; traduzioni amatoriali e non ufficiali, non riviste né approvate dall'autore; illustrazioni di pikisuperstar (senza citare la licenza); icona del sito con l'attribuzione obbligatoria di Flaticon, il link "Horoscope icons created by Magnific - Flaticon" (https://www.flaticon.com/free-icons/horoscope): licenza gratuita con attribuzione, non toglierlo; simboli, impaginazione e sito di Sandro Stefanelli, con link a https://sandrostefanelli.com; richieste di rimozione con un link "scrivimi" / "write to me" (l'indirizzo non compare nel testo) all'indirizzo iCloud "Nascondi la mia email" 53_razza.bufalo@icloud.com (non usare altri indirizzi).
 
 ## Aggiornamento settimanale

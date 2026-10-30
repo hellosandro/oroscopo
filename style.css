@@ -255,13 +255,13 @@ body {
   font-weight: 700;
 }
 
-/* Gruppi del footer (lingue, tema, note) staccati da uno spazio */
+/* Gruppi del footer (lingue, tema, info) staccati da uno spazio */
 .lingue .tema,
 .lingue .link-nota {
   margin-left: 1.5em;
 }
 
-/* Pagina delle note: lo scontrino da solo, i link nel testo sottolineati */
+/* Pagina Info: lo scontrino da solo, i link nel testo sottolineati */
 .pagina-nota .testo a {
   color: inherit;
   text-decoration: underline;
@@ -423,6 +423,12 @@ body {
   stroke-width: 8;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+/* Punto della "i" di Info: pieno, come il punto delle scelte attive */
+.simbolo .punto-i {
+  fill: currentColor;
+  stroke: none;
 }
 
 /* Cerchietto: il punto dentro indica la scelta attiva */
