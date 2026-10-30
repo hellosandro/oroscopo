@@ -387,11 +387,96 @@ body {
   height: calc(9mm * var(--st) * 0.75);
 }
 
-.elenco a:hover .nome-segno,
+/* Sottolineatura al passaggio del mouse: solo dove c'è un mouse
+   (sul telefono resterebbe "incollata" dopo il tocco) */
+@media (hover: hover) {
+  .elenco a:hover .nome-segno {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.12em;
+  }
+}
+
 .elenco a:focus-visible .nome-segno {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.12em;
+}
+
+/* Menu del telefono: icone disegnate come i simboli dei segni
+   (viewBox 100, tratto 8, estremità arrotondate), nel colore del testo */
+.apri-menu,
+.menu {
+  display: none;
+}
+
+.simbolo {
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Cerchietto: il punto dentro indica la scelta attiva */
+.simbolo .punto {
+  display: none;
+  fill: currentColor;
+  stroke: none;
+}
+
+.menu a.attiva .punto {
+  display: inline;
+}
+
+.apri-menu .croce,
+.menu-aperto .apri-menu .linee {
+  display: none;
+}
+
+.menu-aperto .apri-menu .croce {
+  display: inline;
+}
+
+@media screen and (max-width: 480px) {
+  .home .foglio {
+    position: relative;
+  }
+
+  /* Sulla prima riga del titolo, allineata ai simboli dei segni */
+  .apri-menu {
+    display: block;
+    position: absolute;
+    top: calc(3mm * var(--s) + 8.5px);
+    right: 16px;
+    width: 28.8px;
+    height: calc(19.5pt * var(--st) * 0.95);
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--inchiostro);
+    cursor: pointer;
+  }
+
+  .apri-menu .simbolo,
+  body.home .elenco .simbolo {
+    width: 28.8px;
+    height: 28.8px;
+  }
+
+  .menu-aperto #elenco {
+    display: none;
+  }
+
+  .menu-aperto #menu {
+    display: block;
+  }
+
+  /* Sul telefono il footer della home è sostituito dal menu */
+  body.home .lingue {
+    display: none;
+  }
 }
 
 /* Computer: tre colonne da scontrino. Nella prima il titolo,

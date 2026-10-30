@@ -15,12 +15,12 @@ function segnaTemaAttivo() {
   const tema =
     document.documentElement.dataset.tema ||
     (sistemaScuro.matches ? "dark" : "light");
-  for (const link of document.querySelectorAll("#lingue a[data-tema]")) {
+  for (const link of document.querySelectorAll("a[data-tema]")) {
     link.classList.toggle("attiva", link.dataset.tema === tema);
   }
 }
 
-for (const link of document.querySelectorAll("#lingue a[data-tema]")) {
+for (const link of document.querySelectorAll("a[data-tema]")) {
   link.addEventListener("click", (evento) => {
     evento.preventDefault();
     document.documentElement.dataset.tema = link.dataset.tema;
@@ -32,6 +32,16 @@ for (const link of document.querySelectorAll("#lingue a[data-tema]")) {
 }
 sistemaScuro.addEventListener("change", segnaTemaAttivo);
 segnaTemaAttivo();
+
+// Menu del telefono (home): l'icona a due linee apre il menu al posto
+// dell'elenco dei segni e diventa una croce per chiuderlo.
+const apriMenu = document.getElementById("apri-menu");
+if (apriMenu) {
+  apriMenu.addEventListener("click", () => {
+    const aperto = document.body.classList.toggle("menu-aperto");
+    apriMenu.setAttribute("aria-expanded", aperto);
+  });
+}
 
 // Pagina delle note: non legge i dati, mostra il testo nella lingua scelta.
 if (document.getElementById("nota")) {
@@ -85,7 +95,7 @@ function scriviHome(dati, lingua) {
 
 // Footer "english | italiano": ricorda la scelta e la applica a ogni pagina.
 function collegaLingue(scrivi) {
-  for (const link of document.querySelectorAll("#lingue a[data-lingua]")) {
+  for (const link of document.querySelectorAll("a[data-lingua]")) {
     link.addEventListener("click", (evento) => {
       evento.preventDefault();
       try {
@@ -102,11 +112,14 @@ function collegaLingue(scrivi) {
 }
 
 function segnaLinguaAttiva(lingua) {
-  for (const link of document.querySelectorAll("#lingue a[data-lingua]")) {
+  for (const link of document.querySelectorAll("a[data-lingua]")) {
     link.classList.toggle("attiva", link.dataset.lingua === lingua);
   }
   document.getElementById("link-nota").textContent =
     lingua === "en" ? "notes" : "note";
+  for (const voce of document.querySelectorAll(".menu-nota")) {
+    voce.textContent = lingua === "en" ? "Notes" : "Note";
+  }
 }
 
 // Divide la data della settimana in due righe:
