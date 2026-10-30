@@ -131,6 +131,12 @@ body {
   white-space: nowrap;
 }
 
+/* Anche il simbolo riporta all'elenco dei segni */
+.link-glifo {
+  display: flex;
+  flex: none;
+}
+
 /* Il nome riporta all'elenco dei segni */
 .nome a {
   color: inherit;
