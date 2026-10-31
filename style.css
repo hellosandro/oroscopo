@@ -269,6 +269,23 @@ body {
   margin-left: 1.5em;
 }
 
+/* Pagina Info: titoletto in grassetto, senza rientro; anche il paragrafo
+   che lo segue parte senza rientro */
+.testo .titoletto {
+  font-weight: 700;
+  text-indent: 0;
+}
+
+.testo .titoletto + p {
+  text-indent: 0;
+}
+
+/* I link non vanno spezzati con la sillabazione */
+.pagina-nota .testo a {
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+
 /* Pagina Info: lo scontrino da solo, i link nel testo sottolineati */
 .pagina-nota .testo a {
   color: inherit;
