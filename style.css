@@ -196,6 +196,11 @@ body {
     padding: 0 0 24px;
   }
 
+  /* Testo dei paragrafi un po' più grande della scala (18px): 20px */
+  body .testo {
+    font-size: 20px;
+  }
+
   /* Home sul telefono: righe un po' più basse, perché tutti e 12 i segni
      stiano in una schermata di iPhone 13 */
   body.home .titolo,
