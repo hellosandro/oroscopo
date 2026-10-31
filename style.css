@@ -15,6 +15,7 @@
    crescono, ma senza zoom: sul telefono la colonna si allarga e le righe
    diventano più lunghe, il corpo resta lo stesso. */
 :root {
+  --non-scelta: 0.4; /* opacità delle voci non scelte nel menu */
   --carta: #fff; /* fondo */
   --inchiostro: #000; /* testo, righe, simboli */
   /* Righe tratteggiate: al 60% a schermo; in stampa nero pieno,
@@ -55,6 +56,7 @@
   :root:not([data-tema="light"]) {
     --carta: #000;
     --inchiostro: #fff;
+    --non-scelta: 0.6;
     color-scheme: dark;
   }
 
@@ -69,6 +71,7 @@
   :root[data-tema="dark"] {
     --carta: #000;
     --inchiostro: #fff;
+    --non-scelta: 0.6;
     color-scheme: dark;
   }
 
@@ -447,10 +450,10 @@ body {
   display: inline;
 }
 
-/* Le scelte non attive (lingua e tema) al 60%, come le righe tratteggiate */
+/* Le scelte non attive (lingua e tema): al 40% in modo chiaro, al 60% in modo scuro */
 .menu a[data-lingua]:not(.attiva),
 .menu a[data-tema]:not(.attiva) {
-  opacity: 0.6;
+  opacity: var(--non-scelta);
 }
 
 .apri-menu .croce,
