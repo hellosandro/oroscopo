@@ -447,6 +447,12 @@ body {
   display: inline;
 }
 
+/* Le scelte non attive (lingua e tema) al 60%, come le righe tratteggiate */
+.menu a[data-lingua]:not(.attiva),
+.menu a[data-tema]:not(.attiva) {
+  opacity: 0.6;
+}
+
 .apri-menu .croce,
 .menu-aperto .apri-menu .linee {
   display: none;
