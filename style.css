@@ -18,6 +18,7 @@
   --non-scelta: 0.4; /* opacità delle voci non scelte nel menu */
   --carta: #fff; /* fondo */
   --inchiostro: #000; /* testo, righe, simboli */
+  --stelle: #6b6fd6; /* stelle dello sfondo della home: il viola delle illustrazioni */
   /* Righe tratteggiate: al 60% a schermo; in stampa nero pieno,
      perché la stampa termica non rende le trasparenze */
   --riga: var(--inchiostro);

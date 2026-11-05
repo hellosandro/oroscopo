@@ -1,8 +1,9 @@
 // Sfondo animato della home: stelle che fluttuano e si legano con fili
 // quando sono vicine. Solo a schermo: in stampa il canvas è nascosto.
-// Il colore segue il tema (variabili --inchiostro e --carta di style.css).
+// Stelle e fili nel viola delle illustrazioni (variabile --stelle di style.css);
+// la "radura" sotto le colonne prende il colore della pagina (--carta).
 // Tre piani di profondità: le stelle vicine sono più grandi, più veloci e
-// più nere. Il mouse le scosta, un clic su un punto vuoto ne fa nascere altre.
+// più intense. Il mouse le scosta, un clic su un punto vuoto ne fa nascere altre.
 
 (() => {
   const cielo = document.createElement("canvas");
@@ -51,10 +52,10 @@
   }
 
   // sul telefono le stelle passano dietro al testo: più tenui
-  const forza = () => (telefono ? 0.45 : 1);
+  const forza = () => (telefono ? 0.75 : 1);
 
   // colori del tema attuale, come "r,g,b"
-  let INK = "0,0,0", CARTA = "255,255,255";
+  let STELLE = "107,111,214", CARTA = "255,255,255";
   function rgb(colore) {
     let h = colore.trim().replace("#", "");
     if (h.length === 3) h = h.split("").map((c) => c + c).join("");
@@ -63,7 +64,7 @@
   }
   function leggiColori() {
     const stile = getComputedStyle(document.documentElement);
-    INK = rgb(stile.getPropertyValue("--inchiostro")) || INK;
+    STELLE = rgb(stile.getPropertyValue("--stelle")) || STELLE;
     CARTA = rgb(stile.getPropertyValue("--carta")) || CARTA;
   }
 
@@ -116,8 +117,8 @@
         if (Math.abs(a.z - b.z) > 0.45) continue;
         const d = Math.hypot(a.x - b.x, a.y - b.y);
         if (d < DISTANZA) {
-          const alfa = (1 - d / DISTANZA) * (0.15 + Math.min(a.z, b.z) * 0.45) * forza();
-          ctx.strokeStyle = `rgba(${INK},${alfa})`;
+          const alfa = (1 - d / DISTANZA) * Math.min(1, 0.5 + Math.min(a.z, b.z) * 0.6) * forza();
+          ctx.strokeStyle = `rgba(${STELLE},${alfa})`;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
@@ -128,8 +129,8 @@
 
     // stelle, con un leggero scintillio
     for (const s of stelle) {
-      const luce = 0.35 + s.z * 0.65 - (Math.sin(tempo * 0.0015 + s.fase) + 1) * 0.08;
-      ctx.fillStyle = `rgba(${INK},${luce * forza()})`;
+      const luce = 0.8 + s.z * 0.2 - (Math.sin(tempo * 0.0015 + s.fase) + 1) * 0.08;
+      ctx.fillStyle = `rgba(${STELLE},${luce * forza()})`;
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.r, 0, 7);
       ctx.fill();
