@@ -104,7 +104,7 @@ body {
    pagina bianca, scontrino ingrandito a tutta larghezza da app.js */
 @media screen and (max-width: 600px) {
   .pagina-segno,
-  .home {
+  body.home {
     display: block;
     min-height: 0;
     padding: 0;
@@ -129,6 +129,27 @@ body {
 
 .home {
   padding: 48px 16px;
+}
+
+/* Sfondo animato (sfondo.js): solo a schermo, dietro alla colonna */
+.cielo {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home .foglio {
+  position: relative;
+  z-index: 1;
+}
+
+@media print {
+  .cielo {
+    display: none;
+  }
 }
 
 /* Data in alto, come la firma dello scontrino */
