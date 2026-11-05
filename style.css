@@ -549,4 +549,31 @@ body {
   .elenco li:nth-child(6n + 1) {
     border-top: 1px dashed var(--riga);
   }
+  /* Il menu è solo del telefono: la griglia qui sopra non deve riaccenderlo */
+  .home .menu {
+    display: none;
+  }
+}
+
+/* Sfondo animato della home (sfondo.js): stelle e fili dietro alle colonne.
+   Solo a schermo; il canvas lo crea sfondo.js. */
+.cielo {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home .foglio,
+.home .lingue {
+  position: relative;
+  z-index: 1;
+}
+
+@media print {
+  .cielo {
+    display: none;
+  }
 }
