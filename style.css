@@ -298,6 +298,7 @@ body {
 @media screen and (min-width: 960px) {
   .pagina-segno.pagina-nota {
     display: flex;
+    align-items: center; /* footer centrato, come nelle altre pagine */
   }
 
   .pagina-segno.pagina-nota .foglio {
